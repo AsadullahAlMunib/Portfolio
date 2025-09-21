@@ -1,1 +1,366 @@
-
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some Scientific and Mathematical explanations of the Holy Quran</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            direction: ltr;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a5e63 0%, #2c9c8a 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+        
+        .intro {
+            font-size: 1.1rem;
+            margin: 20px 0;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 12px;
+            background: #f9f9f9;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #2c9c8a;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 10px;
+            color: #1a5e63;
+        }
+        
+        .arabic {
+            font-size: 1.8rem;
+            text-align: right;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f0f7f5;
+            border-right: 5px solid #2c9c8a;
+            border-radius: 5px;
+            direction: rtl;
+        }
+        .arabic-sm {
+            font-size: 1rem;
+            text-align: right;
+            line-height: 1.05;
+            margin: 0;
+            padding: 0 2px;
+            background: #f0f7f5;
+            border: 1px solid #2c9c8a;
+            border-radius: 5px;
+            direction: rtl;
+            display: inline-block;
+        }
+        
+        .translation {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #2c9c8a;
+        }
+        
+        .explanation {
+            margin-top: 15px;
+        }
+        
+        .math-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .fact {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .fact h3 {
+            color: #1a5e63;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .fact h3 i {
+            margin-right: 10px;
+        }
+        
+        .author {
+            text-align: center;
+            padding: 20px;
+            background: #f0f7f5;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .math-facts {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Some Scientific and Mathematical explanations of the Holy Quran.</h1>
+        </header>
+        
+        <div class="intro">
+            <p>
+                The Quran is Allah's greatest blessing to us.  It contains
+                solutions to all of humanity's issues, including business,
+                education, society, and family, as well as science.  If one
+                carefully examines the words and sentences of the entire Quran, they
+                will discover far more than they may think.  As humanity advances in
+                knowledge and science, we discover the Quran to be superior in many
+                ways. 
+            </p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2><i class="fas fa-tint"></i> Water provides the foundation for Life</h2>
+                <p>
+                    Water is a necessary ingredient for human survival.  Water
+                    is necessary for life to exist.  Since the invention of the
+                    microscope, advances in biology have been rapid.  This
+                    teaches us that the body is made up of many cells, and the
+                    cytoplasm is one of the cells' most important organelles.
+                    Water accounts for 80 percent of the cytoplasm's volume.
+                    That is, the majority of the body's makeup is water.
+                </p>
+                <p>This truth has been revealed in the Quran long ago, where Allah Almighty states:</p>
+                
+                <div class="arabic">وَاللَّهُ خَلَقَ كُلَّ دَابَّةٍ مِنْ مَاءٍ</div>
+                
+                <p class="translation">"'And Allah created every living creature from water."</p>
+                
+                <p class="explanation">
+                    Allah Almighty explains through this Quran that water is the
+                    vital ingredient of life.  Blood is made up of 45% red blood
+                    cells and 55% plasma, the majority of which is water
+                    (91-92%).
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2><i class="fas fa-magnet"></i> Iron</h2>
+                <p>
+                    Iron is a very vital and robust metal for building our homes
+                    and for a variety of other applications.  Surprisingly, iron
+                    is not a naturally occurring metal on Earth; rather, it has
+                    come from somewhere else in the universe.
+                </p>
+                <p>In the Holy Quran, Almighty Allah mentions regarding iron on Earth:</p>
+                
+                <div class="arabic">وَ أَنْزَلْنَا الْحَدِيدَ فِيهِ بَأْسٌ شَدِيدٌ وَ مَنَافِعُ لِلنَّاسِ</div>
+                
+                <p class="translation">"And I have sent down iron, in which there is great strength and benefits for mankind." (Surah Al-Hadid: 25)</p>
+                
+                <p class="explanation">
+                    We've all heard of the Big Bang theory, which outlines the
+                    universe's origins. In October 2013, the Kelvie Institute of
+                    Particle Astrophysics and Cosmology (K.I.P.A.C.) and
+                    Stanford University's Department of Energy conducted a
+                    cooperative research project to discover how iron is
+                    created.  Their research article stated that roughly 10
+                    billion years ago, a massive collision between cluster
+                    galaxies resulted in iron being distributed throughout all
+                    galaxies.  Furthermore, huge meteorite impacts caused the
+                    formation of iron on Earth.
+                </p>
+                
+                <h3 style="margin-top: 10px;">Mathematically,</h3>
+                <p>
+                    the word <span class="arabic-sm">حديد</span> in Arabic means 'iron', and the name of the
+                    57th surah in the Holy Quran is <span class="arabic-sm">حديد</span> or 'Iron'. We are well
+                    aware that the Holy Quran has 114 surahs; dividing this
+                    number by two yields 57, indicating that the surah in the
+                    center of the Holy Quran is known as 'Iron'. When we look at
+                    the Earth's core, we can see that iron makes up 80% of its
+                    composition.
+                </p>
+                
+                <h3 style="margin-top: 10px;">In terms of Chemistry,</h3>
+                <p>
+                    Where do we find iron? How does the word <span class="arabic-sm">حديد</span> mentioned in
+                    the Quran align with this? Can you imagine? If we look at
+                    the periodic table of elements, we see that the atomic
+                    number of iron (Fe) is 26. Now, if we calculate the value of
+                    the Arabic letters in the word <span class="arabic-sm">حديد</span> according to their
+                    Literal Values, we find that the literal value of <span class="arabic-sm">ح</span> is 8;
+                    <span class="arabic-sm">د</span> is 4; <span class="arabic-sm">ي</span> is 10; and again <span class="arabic-sm">د</span> is 4.
+                    Here, 8 + 4 + 10 +
+                    4 equals 26, which perfectly matches the atomic number of
+                    iron (Fe).
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2><i class="fas fa-expand-arrows-alt"></i> The expansion of the Universe</h2>
+                
+                <p>In verse 47 of Surah 51 of the Holy Qur'an, Allah the Almighty states:</p>
+                
+                <div class="arabic">وَالسَّمَآءَ بَنَیْنٰهَا بِاَیْىدٍ وَّ اِنَّا لَمُوْسِعُوْنَ</div>
+                
+                <p class="translation">"I have created the heavens by My own power, and that power belongs to Me." (Surah Adh-Dhariyat: 47)</p>
+                
+                <p class="explanation">
+                    The information describing the 'expanding of the cosmos' is
+                    recognized as one of the major breakthroughs in the
+                    advancement of space science over the previous century. The
+                    renowned scientist Stephen Hawking stated in his book 'The
+                    Brief History of Time' that 'The discovery of the expansion
+                    of the universe is one of the most significant discoveries
+                    of the twentieth century.'
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2><i class="fas fa-calculator"></i> Mathematically the Holy Quran</h2>
+                
+                <div class="math-facts">
+                    <div class="fact">
+                        <h3><i class="fas fa-globe-asia"></i> Land and Sea</h3>
+                        <p>
+                            The Holy Quran mentions the phrase 'Land' 13
+                            times, while 'Sea' appears 32 times.  At first
+                            glance, this may not appear to be significant.
+                            However, adding 13 and 32 results in a total of 45.
+                            When computing percentages, 13 equals 28.88%, while
+                            32 equals 71.11%.  Do you understand this?  In other
+                            words, scientists calculated a few years ago that
+                            land makes up 28.88% of the Earth's total surface,
+                            while water makes up 71.11%.
+                        </p>
+                    </div>
+                    
+                    <div class="fact">
+                        <h3><i class="fas fa-venus-mars"></i> Man and Woman</h3>
+                        <p>
+                            In the Holy Quran, the word 'Man' is mentioned 23
+                            times, and the word 'Woman' is also mentioned 23
+                            times. This demonstrates that Allah Almighty has
+                            granted equal and just rights through Islam.
+                            Furthermore, adding these two integers yields 46.
+                            Can you imagine what Allah Almighty is conveying
+                            through this?  With developments in biology, we now
+                            know that a human kid is born with 46 chromosomes,
+                            23 from the mother and the remaining 23 from the father.
+                        </p>
+                    </div>
+                    
+                    <div class="fact">
+                        <h3><i class="fas fa-balance-scale"></i> Punishment and Forgiveness</h3>
+                        <p>
+                            The term 'Punishment' occurs 117 times in the Holy
+                            Quran, while 'Forgiveness' appears 234 times.  Thus,
+                            when 117 is multiplied by 2, it equals 234.  This
+                            means that Almighty Allah forgives twice as much as
+                            He punishes.  Through this, He reveals His mercy and compassion.
+                        </p>
+                    </div>
+                    
+                    <div class="fact">
+                        <h3><i class="fas fa-hand-holding-usd"></i> Rich and Poor</h3>
+                        <p>
+                            The word 'Rich' appears 26 times in the Holy
+                            Quran, and the word 'Poor' appears 13 times, where
+                            13 is half of 26. Additionally, the word 'Zakat'
+                            appears the same number of times as the word
+                            'Blessing'. This illustrates the greater benefits
+                            associated with the giving of zakat, encouraging
+                            everyone to give zakat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="author">
+                <p><strong>Md Asadullah Al Munib</strong></p>
+                <p><em>Written on: 29 July, 2023</em></p>
+                <p>Class: 9 (Dakhil)</p>
+                <p>Group: Science</p>
+                <p>Roll: 44</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Back to <a href="../../">Home Page</a></p>
+    </div>
+        </footer>
+</body>
+</html>
