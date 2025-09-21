@@ -55,3 +55,12 @@ function filterProjects(category) {
         card.style.display = match ? 'block' : 'none';
     });
 }
+
+// Bootstrap's JavaScript requires Popper.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Bootstrap tooltips if needed
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+});
