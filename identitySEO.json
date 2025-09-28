@@ -1,0 +1,137 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://asadullahalmunib.github.io/Portfolio",
+    "name": "Md Asadullah Al Munib",
+    "givenName": "Asadullah",
+    "familyName": "Al Munib",
+    "additionalName": "Md",
+    "description": "Passionate Web Developer and Programmer from Bangladesh specializing in modern web technologies including HTML5, CSS3, JavaScript, Bootstrap, and responsive web design. Creating innovative digital solutions with clean code and user-friendly interfaces.",
+    "url": [
+        "https://asadullahalmunib.github.io",
+        "https://asadullahalmunib.github.io/portfolio"
+    ],
+    "image": [
+        "https://raw.githubusercontent.com/AsadullahAlMunib/Portfolio/main/image/AsadullahAlMunib.png",
+        "https://raw.githubusercontent.com/AsadullahAlMunib/Portfolio/main/image/AsadullahAlMunib_Circle.png"
+    ],
+    "jobTitle": [
+        "Web Developer",
+        "Frontend Developer",
+        "UI/UX Designer",
+        "Programmer"
+    ],
+    "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance Developer",
+        "url": "https://asadullahalmunib.github.io"
+    },
+    "knowsAbout": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap",
+        "Responsive Web Design",
+        "Frontend Development",
+        "Web Development",
+        "Programming",
+        "GitHub",
+        "Web Technologies",
+        "UI/UX Design",
+        "Web Performance Optimization"
+    ],
+    "skills": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap",
+        "Responsive Design",
+        "Web Accessibility",
+        "SEO",
+        "Problem Solving",
+        "Creative Design",
+        "Performance Optimization"
+    ],
+    "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Bangladesh",
+        "addressRegion": "Rangpur",
+        "addressLocality": "Mithapukur"
+    },
+    "homeLocation": {
+        "@type": "Place",
+        "name": "Nashirabad, Ranipukur, Mithapukur, Rangpur, Bangladesh"
+    },
+    "email": "mailto:asadullahweb1@gmail.com",
+    "telephone": "+8801930-008570",
+    "sameAs": [
+        "https://github.com/AsadullahAlMunib",
+        "https://twitter.com/asadullah_munib",
+        "https://facebook.com/AsadullahAlMunib",
+        "https://linkedin.com/in/AsadullahAlMunib",
+        "https://instagram.com/AsadullahAlMunib",
+        "https://youtube.com/@AsadullahAlMunib",
+        "https://t.me/AsadullahAlMunib",
+        "https://wa.me/+8801930008570"
+    ],
+    "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Web Developer",
+        "description": "Creating responsive and modern websites using latest web technologies",
+        "occupationLocation": {
+            "@type": "City",
+            "name": "Rangpur"
+        }
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://asadullahalmunib.github.io/Portfolio"
+    },
+    "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Chetnagonj Rohomaniya Hafizia Madrasah",
+        "address": {
+            "@type": "Place",
+            "name": "Ranipukur, Mithapukur, Rangpur, Bangladesh"
+        },
+    },
+    "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Web Development Certification",
+        "credentialCategory": "Professional Certificate"
+    },
+    "knowsLanguage": [
+        "Bengali",
+        "English"
+    ],
+    "award": [
+        "Second Best Regional Programmer in Rangpur 2024"
+    ],
+    "birthDate": "2009-07-12",
+    "gender": "Male",
+    "nationality": "Bangladeshi",
+    "brand": {
+        "@type": "Brand",
+        "name": "Asadullah Al Munib",
+        "logo": "https://raw.githubusercontent.com/AsadullahAlMunib/Portfolio/main/image/AsadullahAlMunib_Circle.png",
+        "slogan": "Turning Ideas into Digital Reality"
+    },
+    "availableAtOrFrom": {
+        "@type": "Place",
+        "name": "Available for Freelance Projects"
+    },
+    "makesOffer": {
+        "@type": "Offer",
+        "description": "Web Design and Development Services",
+        "areaServed": "Worldwide",
+        "availableAtOrFrom": "https://asadullahalmunib.github.io/Portfolio"
+    },
+    "subjectOf": {
+        "@type": "Review",
+        "reviewBody": "Excellent web developer with great attention to detail",
+        "author": {
+            "@type": "Person",
+            "name": "Satisfied Client"
+        }
+    }
+}
