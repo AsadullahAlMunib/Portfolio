@@ -11,10 +11,97 @@ document.addEventListener('DOMContentLoaded', function() {
         teal: '#20c997',
         indigo: '#6610f2',
         orange: '#fd7e14',
-        pink: '#d63384'
+        pink: '#d63384',
+        gray: '#6c757d',
+        deep: '#06367c'
     };
 
-    // 1. Project Categories Pie Chart
+    // 1. Content Distribution Chart
+    const contentDistributionCtx = document.getElementById('contentDistributionChart').getContext('2d');
+    new Chart(contentDistributionCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Projects', 'Achievements', 'Writings'],
+            datasets: [{
+                data: [4, 2, 2],
+                backgroundColor: [
+                    colors.primary,
+                    colors.success,
+                    colors.info
+                ],
+                borderWidth: 2,
+                borderColor: '#fff',
+                hoverOffset: 15
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        usePointStyle: true,
+                        pointStyle: 'circle'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const total = 8; // 4+2+2
+                            const percentage = ((context.raw/total)*100).toFixed(1);
+                            return `${context.label}: ${context.raw} items (${percentage}%)`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // 2. Writings Analytics Chart
+    const writingsCtx = document.getElementById('writingsChart').getContext('2d');
+    new Chart(writingsCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Science', 'Islamic', 'Technology'],
+            datasets: [{
+                data: [1, 1, 0],
+                backgroundColor: [
+                    colors.info,
+                    colors.indigo,
+                    colors.primary
+                ],
+                borderWidth: 2,
+                borderColor: '#fff',
+                hoverOffset: 15
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '50%',
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 15,
+                        usePointStyle: true,
+                        pointStyle: 'circle'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.label}: ${context.raw} article${context.raw !== 1 ? 's' : ''}`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // 3. Project Categories Pie Chart
     const projectCategoriesCtx = document.getElementById('projectCategoriesChart').getContext('2d');
     new Chart(projectCategoriesCtx, {
         type: 'pie',
@@ -56,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 2. Project Status Donut Chart
+    // 4. Project Status Donut Chart
     const projectStatusCtx = document.getElementById('projectStatusChart').getContext('2d');
     new Chart(projectStatusCtx, {
         type: 'doughnut',
@@ -97,20 +184,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 3. Monthly Distribution Bar Chart
+    // 5. Monthly Distribution Bar Chart
     const monthlyDistributionCtx = document.getElementById('monthlyDistributionChart').getContext('2d');
     new Chart(monthlyDistributionCtx, {
         type: 'bar',
         data: {
-            labels: ['July', 'August', 'September', 'October'],
+            labels: ['January', 'February', 'March', 'April', 'May', 'Jun', 'July', 'August', 'September', 'October', 'November', 'December'],
             datasets: [{
                 label: 'Projects Completed',
-                data: [1, 2, 1, 0],
+                data: [0, 0, 0, 0, 0, 1, 2, 1, 3, 0, 0, 0],
                 backgroundColor: [
                     colors.primary,
                     colors.success,
+                    colors.warning,
                     colors.info,
-                    colors.secondary
+                    colors.danger,
+                    colors.purple,
+                    colors.teal,
+                    colors.indigo,
+                    colors.orange,
+                    colors.pink,
+                    colors.gray,
+                    colors.deep
                 ],
                 borderRadius: 5,
                 borderWidth: 0
@@ -142,19 +237,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 4. Technology Usage Polar Chart
+    // 6. Technology Usage Polar Chart
     const technologyUsageCtx = document.getElementById('technologyUsageChart').getContext('2d');
     new Chart(technologyUsageCtx, {
         type: 'polarArea',
         data: {
-            labels: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP', 'MySQL'],
+            labels: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP', 'API'],
             datasets: [{
-                data: [2, 2, 4, 2, 0, 0],
+                data: [4, 3, 4, 1, 1, 1],
                 backgroundColor: [
-                    colors.danger,
+                    colors.orange,
                     colors.primary,
                     colors.warning,
-                    colors.purple,
+                    colors.indigo,
                     colors.info,
                     colors.success
                 ],
@@ -185,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 5. Achievement Levels Radar Chart
+    // 7. Achievement Levels Radar Chart
     const achievementLevelsCtx = document.getElementById('achievementLevelsChart').getContext('2d');
     new Chart(achievementLevelsCtx, {
         type: 'radar',
@@ -240,100 +335,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 6. Writings Analytics Chart
-    const writingsCtx = document.getElementById('writingsChart').getContext('2d');
-    new Chart(writingsCtx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Science Articles', 'Technology Articles', 'Other Topics'],
-            datasets: [{
-                data: [2, 0, 0],
-                backgroundColor: [
-                    colors.info,
-                    colors.warning,
-                    colors.secondary
-                ],
-                borderWidth: 2,
-                borderColor: '#fff',
-                hoverOffset: 15
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            cutout: '50%',
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        padding: 15,
-                        usePointStyle: true,
-                        pointStyle: 'circle'
-                    }
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            return `${context.label}: ${context.raw} article${context.raw !== 1 ? 's' : ''}`;
-                        }
-                    }
-                }
-            }
-        }
-    });
-
-    // 7. Content Distribution Chart
-    const contentDistributionCtx = document.getElementById('contentDistributionChart').getContext('2d');
-    new Chart(contentDistributionCtx, {
-        type: 'pie',
-        data: {
-            labels: ['Projects', 'Achievements', 'Writings'],
-            datasets: [{
-                data: [4, 2, 2],
-                backgroundColor: [
-                    colors.primary,
-                    colors.success,
-                    colors.info
-                ],
-                borderWidth: 2,
-                borderColor: '#fff',
-                hoverOffset: 15
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        padding: 20,
-                        usePointStyle: true,
-                        pointStyle: 'circle'
-                    }
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            const total = 8; // 4+2+2
-                            const percentage = ((context.raw/total)*100).toFixed(1);
-                            return `${context.label}: ${context.raw} items (${percentage}%)`;
-                        }
-                    }
-                }
-            }
-        }
-    });
-
     // 8. Project Timeline Chart
     const projectTimelineCtx = document.getElementById('projectTimelineChart').getContext('2d');
     new Chart(projectTimelineCtx, {
         type: 'line',
         data: {
-            labels: ['July', 'August', 'September'],
+            labels: ['2023', '2024', 'July 2025', 'August 2025', 'September 2025'],
             datasets: [{
-                label: 'Cumulative Projects',
-                data: [1, 3, 4],
+                label: 'Content Timeline',
+                data: [1, 4, 5, 7, 8],
                 borderColor: colors.success,
                 backgroundColor: 'rgba(25, 135, 84, 0.25)',
                 tension: 0.3,
@@ -351,7 +361,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 tooltip: {
                     callbacks: {
                         label: function(context) {
-                            return `Total projects: ${context.raw}`;
+                            return `Total Content: ${context.raw}`;
                         }
                     }
                 }
