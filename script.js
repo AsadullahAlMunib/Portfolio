@@ -64,3 +64,108 @@ document.addEventListener('DOMContentLoaded', function() {
         return new bootstrap.Tooltip(tooltipTriggerEl);
     });
 });
+
+// Navbar Auto Close on Mobile - Additional Code
+function initializeNavbarMobile() {
+    const navbarCollapse = document.getElementById('navbarSupportedContent');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const dropdownItems = document.querySelectorAll('.dropdown-item');
+    
+    // Function to close navbar on mobile
+    function closeNavbar() {
+        if (window.innerWidth < 768 && navbarCollapse.classList.contains('show')) {
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, {toggle: false});
+            bsCollapse.hide();
+        }
+    }
+    
+    // Add click event to nav links for mobile close
+    navLinks.forEach(link => {
+        // Skip dropdown toggles - they should only open/close dropdown
+        if (link.classList.contains('dropdown-toggle')) {
+            return;
+        }
+        
+        const originalOnClick = link.onclick;
+        link.addEventListener('click', function(e) {
+            if (this.getAttribute('href')?.startsWith('#')) {
+                closeNavbar();
+            }
+            if (originalOnClick) originalOnClick.call(this, e);
+        });
+    });
+    
+    // Add click event to dropdown items for mobile close
+    dropdownItems.forEach(item => {
+        const originalOnClick = item.onclick;
+        item.addEventListener('click', function(e) {
+            closeNavbar();
+            if (originalOnClick) originalOnClick.call(this, e);
+        });
+    });
+    
+    // Prevent dropdown toggle from closing navbar
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            // Only toggle dropdown, don't close navbar
+            e.stopPropagation();
+        });
+    });
+}
+
+// Smooth scroll with navbar offset - Additional Code
+function setupSmoothScroll() {
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    const dropdownItems = document.querySelectorAll('.dropdown-item[href^="#"]');
+    
+    function smoothScrollTo(targetId) {
+        // Handle home link (scroll to top)
+        if (targetId === '#' || targetId === '#home') {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            return;
+        }
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = targetElement.offsetTop - navbarHeight - 10;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+    
+    // Add smooth scroll to nav links (excluding dropdown toggles)
+    navLinks.forEach(link => {
+        if (!link.classList.contains('dropdown-toggle')) {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    smoothScrollTo(this.getAttribute('href'));
+                }
+            });
+        }
+    });
+    
+    // Add smooth scroll to dropdown items
+    dropdownItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                smoothScrollTo(this.getAttribute('href'));
+            }
+        });
+    });
+}
+
+// Initialize only the additional functionality
+document.addEventListener('DOMContentLoaded', function() {
+    initializeNavbarMobile();
+    setupSmoothScroll();
+});
