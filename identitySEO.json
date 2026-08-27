@@ -6,15 +6,44 @@
     "givenName": "Asadullah",
     "familyName": "Al Munib",
     "additionalName": "Md",
-    "description": "Passionate Web Developer and Programmer from Bangladesh specializing in modern web technologies including HTML5, CSS3, JavaScript, Bootstrap, and responsive web design. Creating innovative digital solutions with clean code and user-friendly interfaces.",
+    "alternateName": [
+        "Md Asadullah Al Nabil",
+        "Asadullah Al Munib",
+        "Asadullah Al Nabil",
+        "Munib",
+        "Nabil"
+    ],
+    "description": "Passionate Web Developer and Programmer from Bangladesh specializing in modern web technologies including HTML5, CSS3, JavaScript, Bootstrap, Tailwind CSS, and responsive web design. Creating innovative digital solutions with clean code and user-friendly interfaces.",
+    "birthDate": "2009-07-12",
+    "gender": "Male",
+    "nationality": "Bangladeshi",
     "url": [
-        "https://asadullahalmunib.github.io",
-        "https://asadullahalmunib.github.io/portfolio"
+        "https://asadullahalmunib.github.io/Portfolio",
+        "https://munib.rf.gd"
     ],
     "image": [
         "https://raw.githubusercontent.com/AsadullahAlMunib/Portfolio/main/image/AsadullahAlMunib.png",
         "https://raw.githubusercontent.com/AsadullahAlMunib/Portfolio/main/image/AsadullahAlMunib_Circle.png"
     ],
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://asadullahalmunib.github.io/Portfolio"
+    },
+    "brand": {
+        "@type": "Brand",
+        "name": "Asadullah Al Munib",
+        "alternateName": [
+            "Md Asadullah Al Munib",
+            "Asadullah",
+            "Munib"
+        ],
+        "url": "https://asadullahalmunib.github.io/Portfolio",
+        "logo": "https://raw.githubusercontent.com/AsadullahAlMunib/Portfolio/main/image/AsadullahAlMunib_Circle.png",
+        "slogan": "Turning Ideas into Digital Reality",
+        "sameAs": [
+            "https://facebook.com/AsadullahAlMunib"
+        ]
+    },
     "jobTitle": [
         "Web Developer",
         "Frontend Developer",
@@ -23,20 +52,28 @@
     ],
     "worksFor": {
         "@type": "Organization",
-        "name": "Freelance Developer",
-        "url": "https://asadullahalmunib.github.io"
+        "name": "Independent Developer / Open Source Contributor",
+        "url": "https://github.com/AsadullahAlMunib"
     },
     "knowsAbout": [
+        "Islam",
+        "Hadith",
+        "Fiqh",
+        "Islamic Studies",
         "HTML5",
         "CSS3",
         "JavaScript",
         "Bootstrap",
+        "Tailwind CSS",
+        "PHP",
+        "MySQL",
+        "Laravel",
+        "C (Programming Language)",
         "Responsive Web Design",
         "Frontend Development",
         "Web Development",
         "Programming",
         "GitHub",
-        "Web Technologies",
         "UI/UX Design",
         "Web Performance Optimization"
     ],
@@ -45,6 +82,10 @@
         "CSS3",
         "JavaScript",
         "Bootstrap",
+        "Tailwind CSS",
+        "PHP",
+        "MySQL",
+        "Laravel",
         "Responsive Design",
         "Web Accessibility",
         "SEO",
@@ -62,15 +103,15 @@
         "@type": "Place",
         "name": "Nashirabad, Ranipukur, Mithapukur, Rangpur, Bangladesh"
     },
-    "email": "mailto:asadullahweb1@gmail.com",
-    "telephone": "+8801930-008570",
+    "email": "asadullahweb1@gmail.com",
+    "telephone": "+8801930008570",
     "sameAs": [
         "https://github.com/AsadullahAlMunib",
-        "https://twitter.com/asadullah_munib",
-        "https://facebook.com/AsadullahAlMunib",
+        "https://facebook.com/MdAsadullahAlMunib",
         "https://linkedin.com/in/AsadullahAlMunib",
         "https://instagram.com/AsadullahAlMunib",
         "https://youtube.com/@AsadullahAlMunib",
+        "https://x.com/asadullah_munib",
         "https://t.me/AsadullahAlMunib",
         "https://wa.me/+8801930008570"
     ],
@@ -83,55 +124,75 @@
             "name": "Rangpur"
         }
     },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://asadullahalmunib.github.io/Portfolio"
-    },
-    "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Chetnagonj Rohomaniya Hafizia Madrasah",
-        "address": {
-            "@type": "Place",
-            "name": "Ranipukur, Mithapukur, Rangpur, Bangladesh"
+    "alumniOf": [
+        {
+            "@type": "EducationalOrganization",
+            "name": "Chetnagonj Rohomaniya Hafizia Madrasah",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Ranipukur",
+                "addressLocality": "Mithapukur",
+                "addressRegion": "Rangpur",
+                "addressCountry": "Bangladesh"
+            }
         },
-    },
-    "hasCredential": {
-        "@type": "EducationalOccupationalCredential",
-        "name": "Web Development Certification",
-        "credentialCategory": "Professional Certificate"
-    },
+        {
+            "@type": "EducationalOrganization",
+            "name": "Dhap Satgara B. M. Model Kamil Madrasah, Rangpur",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Rangpur Sadar",
+                "addressRegion": "Rangpur",
+                "addressCountry": "Bangladesh"
+            }
+        }
+    ],
+    "hasCredential": [
+        {
+            "@type": "EducationalOccupationalCredential",
+            "name": "C Programming Certificate",
+            "credentialCategory": "Professional Certificate",
+            "recognizedBy": {
+                "@type": "GovernmentOrganization",
+                "name": "Bangladesh Computer Council (BCC), Rangpur"
+            }
+        },
+        {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Dakhil Certificate (SSC Equivalent)",
+            "credentialCategory": "Educational Secondary School Certificate",
+            "recognizedBy": {
+                "@type": "EducationalOrganization",
+                "name": "Bangladesh Madrasah Education Board"
+            }
+        },
+        {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Web Design & Development Certificate",
+            "credentialCategory": "Professional Certificate",
+            "recognizedBy": {
+                "@type": "GovernmentOrganization",
+                "name": "Bangladesh Computer Council (BCC), Rangpur"
+            }
+        }
+    ],
     "knowsLanguage": [
         "Bengali",
-        "English"
+        "English",
+        "Arabic"
     ],
     "award": [
-        "Second Best Regional Programmer in Rangpur 2024"
+        "Second Best Regional Programmer in Rangpur 2024",
+        "8th Position in National Innovation Fair 2024"
     ],
-    "birthDate": "2009-07-12",
-    "gender": "Male",
-    "nationality": "Bangladeshi",
-    "brand": {
-        "@type": "Brand",
-        "name": "Asadullah Al Munib",
-        "logo": "https://raw.githubusercontent.com/AsadullahAlMunib/Portfolio/main/image/AsadullahAlMunib_Circle.png",
-        "slogan": "Turning Ideas into Digital Reality"
-    },
-    "availableAtOrFrom": {
-        "@type": "Place",
-        "name": "Available for Freelance Projects"
-    },
     "makesOffer": {
         "@type": "Offer",
         "description": "Web Design and Development Services",
         "areaServed": "Worldwide",
-        "availableAtOrFrom": "https://asadullahalmunib.github.io/Portfolio"
-    },
-    "subjectOf": {
-        "@type": "Review",
-        "reviewBody": "Excellent web developer with great attention to detail",
-        "author": {
-            "@type": "Person",
-            "name": "Satisfied Client"
+        "availableAtOrFrom": {
+            "@type": "Place",
+            "name": "Available for Freelance Projects",
+            "url": "https://asadullahalmunib.github.io/Portfolio"
         }
     }
 }
