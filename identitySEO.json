@@ -97,7 +97,9 @@
         "@type": "PostalAddress",
         "addressCountry": "Bangladesh",
         "addressRegion": "Rangpur",
-        "addressLocality": "Mithapukur"
+        "addressLocality": "Mithapukur",
+		"streetAddress": "Ranipukur"
+
     },
     "homeLocation": {
         "@type": "Place",
@@ -134,7 +136,13 @@
                 "addressLocality": "Mithapukur",
                 "addressRegion": "Rangpur",
                 "addressCountry": "Bangladesh"
-            }
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 25.6465424,
+                "longitude": 89.2075677
+            },
+            "hasMap": "https://maps.app.goo.gl/L3ig1BEE5Z7ZECPr8"
         },
         {
             "@type": "EducationalOrganization",
@@ -144,7 +152,13 @@
                 "addressLocality": "Rangpur Sadar",
                 "addressRegion": "Rangpur",
                 "addressCountry": "Bangladesh"
-            }
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 25.7590636,
+                "longitude": 89.2282695
+            },
+            "hasMap": "https://maps.app.goo.gl/6rk1B3PZYoT37Fzx6"
         }
     ],
     "hasCredential": [
