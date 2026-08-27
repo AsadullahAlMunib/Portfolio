@@ -15,8 +15,28 @@
     ],
     "description": "Passionate Web Developer and Programmer from Bangladesh specializing in modern web technologies including HTML5, CSS3, JavaScript, Bootstrap, Tailwind CSS, and responsive web design. Creating innovative digital solutions with clean code and user-friendly interfaces.",
     "birthDate": "2009-07-12",
-    "gender": "Male",
+	"birthPlace": {
+        "@type": "Place",
+        "name": "Chachia Mirganj, Tarapur, Sundorgonj, Gaibandha, Bangladesh"
+    },
+	"gender": "Male",
     "nationality": "Bangladeshi",
+	"parent": [
+        {
+            "@type": "Person",
+            "name": "Md Mokhtarul Alam",
+            "gender": "Male",
+            "nationality": "Bangladeshi",
+            "description": "Father"
+        },
+        {
+            "@type": "Person",
+            "name": "Mst Mahmuda Begum",
+            "gender": "Female",
+            "nationality": "Bangladeshi",
+            "description": "Mother"
+        }
+    ],
     "url": [
         "https://asadullahalmunib.github.io/Portfolio",
         "https://munib.rf.gd"
@@ -191,9 +211,21 @@
         }
     ],
     "knowsLanguage": [
-        "Bengali",
-        "English",
-        "Arabic"
+        {
+            "@type": "Language",
+            "name": "Bengali",
+            "alternateName": "bn"
+        },
+        {
+            "@type": "Language",
+            "name": "English",
+            "alternateName": "en"
+        },
+        {
+            "@type": "Language",
+            "name": "Arabic",
+            "alternateName": "ar"
+        }
     ],
     "award": [
         "Second Best Regional Programmer in Rangpur 2024",
