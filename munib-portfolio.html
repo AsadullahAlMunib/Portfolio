@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Md Asadullah Al Munib — Student & Web Developer</title>
+<meta name="description" content="Md Asadullah Al Munib — student & web developer from Rangpur, Bangladesh. 19+ GitHub repos, national achievements, 3D portfolio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>tailwind.config = { darkMode: 'class' }</script>
+<style>
+  ::selection { background: #7c3aed; color: #fff; }
+  .gradient-text { background: linear-gradient(90deg,#7c3aed,#d946ef,#0ea5e9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .blob { filter: blur(90px); opacity:.3; animation: float 12s ease-in-out infinite; }
+  @keyframes float { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(30px,-30px) scale(1.1)} }
+  .reveal { opacity:0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.visible { opacity:1; transform: translateY(0); }
+  .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
+  .card-hover:hover { transform: translateY(-6px); }
+  .typing::after { content:'|'; animation: blink 1s step-end infinite; color:#7c3aed; }
+  @keyframes blink { 50%{opacity:0} }
+  html { scroll-padding-top: 5rem; }
+  #hero3d { position:absolute; inset:0; z-index:0; pointer-events:none; }
+  .tilt { transform-style: preserve-3d; transition: transform .15s ease-out; will-change: transform; }
+  .glow-ring { box-shadow: 0 0 60px rgba(168,85,247,.45), 0 0 120px rgba(14,165,233,.25); }
+  @keyframes orbit { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+  .orbit-badge { animation: orbit 14s linear infinite; }
+  .orbit-badge > * { animation: orbit 14s linear infinite reverse; }
+  @keyframes scrollDot { 0%{opacity:1; transform:translateY(0)} 100%{opacity:0; transform:translateY(16px)} }
+  .scroll-dot { animation: scrollDot 1.6s ease-in-out infinite; }
+</style>
+</head>
+<body class="font-sans bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-200 antialiased transition-colors duration-300">
+
+<!-- Background blobs -->
+<div aria-hidden="true" class="fixed inset-0 overflow-hidden pointer-events-none">
+  <div class="blob absolute -top-24 -left-24 w-96 h-96 rounded-full bg-violet-500 dark:bg-violet-700"></div>
+  <div class="blob absolute top-1/3 -right-32 w-96 h-96 rounded-full bg-sky-400 dark:bg-sky-700" style="animation-delay:-4s"></div>
+  <div class="blob absolute bottom-0 left-1/4 w-96 h-96 rounded-full bg-fuchsia-400 dark:bg-fuchsia-800" style="animation-delay:-8s"></div>
+</div>
+
+<!-- ===== Navbar ===== -->
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-lg bg-white/70 dark:bg-slate-950/70 border-b border-slate-200/60 dark:border-slate-800/60">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <a href="#home" class="font-display font-bold text-lg tracking-tight">
+      <span class="gradient-text">Munib</span><span class="text-slate-500 dark:text-slate-400">.dev</span>
+    </a>
+    <ul class="hidden md:flex items-center gap-7 text-sm font-medium">
+      <li><a href="#about" class="hover:text-violet-600 dark:hover:text-violet-400 transition">About</a></li>
+      <li><a href="#skills" class="hover:text-violet-600 dark:hover:text-violet-400 transition">Skills</a></li>
+      <li><a href="#projects" class="hover:text-violet-600 dark:hover:text-violet-400 transition">Projects</a></li>
+      <li><a href="#achievements" class="hover:text-violet-600 dark:hover:text-violet-400 transition">Achievements</a></li>
+      <li><a href="#writings" class="hover:text-violet-600 dark:hover:text-violet-400 transition">Writings</a></li>
+      <li><a href="#contact" class="hover:text-violet-600 dark:hover:text-violet-400 transition">Contact</a></li>
+    </ul>
+    <div class="flex items-center gap-3">
+      <button id="themeToggle" aria-label="Toggle theme" class="w-9 h-9 grid place-items-center rounded-full border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+        <svg class="w-5 h-5 hidden dark:block text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 18a6 6 0 100-12 6 6 0 000 12zM12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/></svg>
+        <svg class="w-5 h-5 block dark:hidden text-slate-700" fill="currentColor" viewBox="0 0 24 24"><path d="M21.75 14.25a9 9 0 01-12-12 9.75 9.75 0 1012 12z"/></svg>
+      </button>
+      <button id="menuToggle" aria-label="Menu" class="md:hidden w-9 h-9 grid place-items-center rounded-full border border-slate-300 dark:border-slate-700">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div id="mobileMenu" class="hidden md:hidden px-6 pb-4 space-y-2 text-sm font-medium bg-white/90 dark:bg-slate-950/90">
+    <a href="#about" class="block py-2 hover:text-violet-600">About</a>
+    <a href="#skills" class="block py-2 hover:text-violet-600">Skills</a>
+    <a href="#projects" class="block py-2 hover:text-violet-600">Projects</a>
+    <a href="#achievements" class="block py-2 hover:text-violet-600">Achievements</a>
+    <a href="#writings" class="block py-2 hover:text-violet-600">Writings</a>
+    <a href="#contact" class="block py-2 hover:text-violet-600">Contact</a>
+  </div>
+</header>
+
+<main class="relative z-10">
+
+<!-- ===== Hero with 3D ===== -->
+<section id="home" class="relative max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-20 flex flex-col-reverse md:flex-row items-center gap-12">
+  <div id="hero3d"></div>
+  <div class="flex-1 text-center md:text-left relative z-10">
+    <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300 mb-5">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> ICT Olympiad Ambassador · Available for collaboration
+    </p>
+    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+      Hi, I'm <span class="gradient-text">Md Asadullah Al Munib</span>
+    </h1>
+    <p class="mt-4 text-xl text-slate-600 dark:text-slate-400 font-medium">
+      <span id="typed" class="typing"></span>
+    </p>
+    <p class="mt-5 max-w-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+      A student & web developer from Rangpur, Bangladesh — 19 public repos on GitHub, national-level innovation & programming awards, and a passion for turning curiosity into code. For me, learning never stops.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+      <a href="#projects" class="px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-violet-600 to-fuchsia-600 shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 hover:-translate-y-0.5 transition">🚀 Explore My Work</a>
+      <a href="https://github.com/AsadullahAlMunib" target="_blank" rel="noopener" class="px-6 py-3 rounded-xl font-semibold border-2 border-violet-600 text-violet-600 dark:text-violet-400 hover:bg-violet-600 hover:text-white transition">★ GitHub</a>
+    </div>
+    <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-3" id="socialLinks"></div>
+  </div>
+  <div class="relative shrink-0 z-10">
+    <div class="absolute inset-0 glow-ring rounded-full"></div>
+    <div class="relative w-60 h-60 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-violet-500 via-fuchsia-500 to-sky-500 p-1 shadow-2xl shadow-violet-500/40">
+      <div class="w-full h-full rounded-full bg-white dark:bg-slate-950 overflow-hidden">
+        <img src="https://raw.githubusercontent.com/AsadullahAlMunib/Portfolio/main/image/AsadullahAlMunib_Circle.png"
+             alt="Md Asadullah Al Munib" class="w-full h-full object-cover"
+             onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('span'),{className:'font-display text-8xl font-bold gradient-text w-full h-full grid place-items-center select-none',textContent:'M'}))">
+      </div>
+    </div>
+    <div class="absolute inset-[-14px] orbit-badge pointer-events-none">
+      <span class="absolute top-0 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 shadow-lg border border-slate-100 dark:border-slate-800 text-xs font-semibold whitespace-nowrap">💻 Web Developer</span>
+    </div>
+    <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-2 rounded-xl bg-white dark:bg-slate-900 shadow-lg border border-slate-100 dark:border-slate-800 text-xs font-semibold whitespace-nowrap">🎓 Student · HSC-27 · Rangpur 🇧🇩</div>
+  </div>
+</section>
+<div class="flex justify-center pb-10 relative z-10"><div class="w-6 h-10 rounded-full border-2 border-slate-300 dark:border-slate-700 flex justify-center pt-2"><div class="w-1.5 h-1.5 rounded-full bg-violet-500 scroll-dot"></div></div></div>
+
+<!-- ===== Stats ===== -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 pb-8">
+  <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="tilt card-hover p-6 rounded-3xl bg-gradient-to-br from-violet-600 to-fuchsia-600 text-white shadow-lg shadow-violet-500/30 text-center">
+      <p class="text-4xl font-bold font-display"><span class="counter" data-target="19">0</span>+</p><p class="text-sm opacity-90 mt-1">GitHub Repos</p>
+    </div>
+    <div class="tilt card-hover p-6 rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/70 dark:border-slate-800 text-center">
+      <p class="text-4xl font-bold font-display gradient-text"><span class="counter" data-target="19">0</span></p><p class="text-sm text-slate-600 dark:text-slate-400 mt-1">GitHub Followers</p>
+    </div>
+    <div class="tilt card-hover p-6 rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/70 dark:border-slate-800 text-center">
+      <p class="text-4xl font-bold font-display gradient-text"><span class="counter" data-target="2">0</span></p><p class="text-sm text-slate-600 dark:text-slate-400 mt-1">National Awards</p>
+    </div>
+    <div class="tilt card-hover p-6 rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/70 dark:border-slate-800 text-center">
+      <p class="text-4xl font-bold font-display gradient-text">∞</p><p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Curiosity</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+  <h2 class="reveal font-display text-3xl font-bold text-center">About <span class="gradient-text">Me</span></h2>
+  <div class="reveal mt-10 grid md:grid-cols-3 gap-6">
+    <div class="tilt card-hover md:col-span-2 p-8 rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/70 dark:border-slate-800 shadow-sm">
+      <p class="leading-relaxed text-slate-600 dark:text-slate-400">
+        I'm Md Asadullah Al Munib from Bangladesh, a student with a deep interest in technology and creativity. I grew up with a natural curiosity about how things work — which led me to explore <strong class="text-slate-800 dark:text-slate-200">coding, robotics, and DIY projects</strong> alongside my studies. I passed my <strong class="text-slate-800 dark:text-slate-200">Dakhil (SSC) in 2025</strong> from Dhap Satgara B. M. Model Kamil Madrasah, Rangpur, and I'm currently a student of the <strong class="text-slate-800 dark:text-slate-200">Alim-2027 (HSC-27) batch</strong> at the same institution.
+      </p>
+      <p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-400">
+        I'm learning and practicing web design & development — HTML, CSS, JavaScript, PHP, MySQL, and Laravel — plus <strong class="text-slate-800 dark:text-slate-200">C programming</strong>. Outside of studies, I enjoy writing short articles on science and technology, and I serve as an <strong class="text-slate-800 dark:text-slate-200">Ambassador of ICT Olympiad Bangladesh</strong>. I believe combining academic knowledge with self-learning opens the door to real growth.
+      </p>
+      <p class="mt-4 leading-relaxed text-slate-600 dark:text-slate-400">My goal is to continuously improve my skills, create meaningful projects, and inspire people through innovation and passion.</p>
+    </div>
+    <div class="space-y-5">
+      <div class="tilt card-hover p-6 rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/70 dark:border-slate-800 flex items-center gap-4">
+        <span class="text-3xl">🏅</span>
+        <div><p class="font-semibold">ICT Olympiad Bangladesh</p><p class="text-sm text-slate-500 dark:text-slate-400">Ambassador · Dhap-Satgara B.M. Model Kamil Madrasah, Rangpur</p></div>
+      </div>
+      <div class="tilt card-hover p-6 rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/70 dark:border-slate-800 flex items-center gap-4">
+        <span class="text-3xl">📅</span>
+        <div><p class="font-semibold">On GitHub since March 2024</p><p class="text-sm text-slate-500 dark:text-slate-400">19 public repos · 1 gist · following 4</p></div>
+      </div>
+      <div class="tilt card-hover p-6 rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/70 dark:border-slate-800 flex items-center gap-4">
+        <span class="text-3xl">📍</span>
+        <div><p class="font-semibold">Rangpur, Bangladesh</p><p class="text-sm text-slate-500 dark:text-slate-400">Based in Rangpur Division 🇧🇩</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Skills ===== -->
+<section id="skills" class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+  <h2 class="reveal font-display text-3xl font-bold text-center">Skills & <span class="gradient-text">Technologies</span></h2>
+  <p class="reveal text-center text-slate-500 dark:text-slate-400 mt-3">What I'm learning and practicing every day</p>
+  <div class="reveal mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4" id="skillsGrid"></div>
+</section>
+
+<!-- ===== Projects ===== -->
+<section id="projects" class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+  <h2 class="reveal font-display text-3xl font-bold text-center">Featured <span class="gradient-text">Projects</span></h2>
+  <p class="reveal text-center text-slate-500 dark:text-slate-400 mt-3">Highlights from 19+ public repositories on GitHub</p>
+  <div class="reveal mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid"></div>
+  <p class="reveal text-center mt-10 text-slate-500 dark:text-slate-400">…plus <a href="https://github.com/AsadullahAlMunib?tab=repositories" target="_blank" rel="noopener" class="font-semibold text-violet-600 dark:text-violet-400 underline">LogicFix, Interesting_Functions, Practice_Web, AsadullahAlMunib & more</a> on GitHub.</p>
+</section>
+
+<!-- ===== Achievements ===== -->
+<section id="achievements" class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+  <h2 class="reveal font-display text-3xl font-bold text-center"><span class="gradient-text">Achievements</span></h2>
+  <div class="reveal mt-10 grid md:grid-cols-2 gap-6">
+    <div class="tilt card-hover p-8 rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/70 dark:border-slate-800">
+      <div class="flex items-start justify-between">
+        <div><span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">🏆 8th Position · National Level</span>
+          <h3 class="mt-3 font-display text-xl font-bold">National Innovation Fair</h3></div>
+        <span class="font-display text-4xl text-slate-200 dark:text-slate-800">08</span>
+      </div>
+      <p class="mt-3 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Represented Dhap-Satagara Madrasah at the Innovation Fair organized by the Bangladesh Madrasah Education Board — secured 8th place among 40+ madrasah teams from all over Bangladesh.</p>
+      <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+        <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800">📍 Dhaka, Bangladesh</span>
+        <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800">📅 09 May, 2024</span>
+        <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800">🔬 Science & Tech</span>
+      </div>
+    </div>
+    <div class="tilt card-hover p-8 rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/70 dark:border-slate-800">
+      <div class="flex items-start justify-between">
+        <div><span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">🥈 2nd Position · Divisional Level</span>
+          <h3 class="mt-3 font-display text-xl font-bold">Regional Programming Contest</h3></div>
+        <span class="font-display text-4xl text-slate-200 dark:text-slate-800">02</span>
+      </div>
+      <p class="mt-3 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Organized by Bangladesh Computer Council (BCC) Rangpur — secured 2nd place among 120+ participants (40 selected for the final round) from the entire Rangpur division.</p>
+      <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+        <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800">📍 Rangpur, Bangladesh</span>
+        <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800">📅 28 Jun, 2024</span>
+        <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800">💻 Programming</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Writings ===== -->
+<section id="writings" class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+  <h2 class="reveal font-display text-3xl font-bold text-center">Featured <span class="gradient-text">Writings</span></h2>
+  <div class="reveal mt-10 max-w-3xl mx-auto">
+    <article class="tilt card-hover p-8 rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/70 dark:border-slate-800">
+      <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300">🕌 Islamic · Science</span>
+      <h3 class="mt-3 font-display text-xl font-bold">Some Scientific and Mathematical Explanations of the Holy Quran</h3>
+      <p class="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">The Quran is Allah's greatest blessing to us. It contains solutions to all of humanity's issues — explored through the lens of science and mathematics.</p>
+      <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">✍️ Written 29 Jul 2023 · Published 25 Sep 2025</p>
+    </article>
+    <p class="text-center mt-6 text-sm text-slate-500 dark:text-slate-400">I also write tech articles — like my LinkedIn posts on <a href="https://www.linkedin.com/posts/asadullahalmunib_microsoft-introduced-majorana-1-after-activity-7301194140430606336-bhwn" target="_blank" rel="noopener" class="font-semibold text-violet-600 dark:text-violet-400 underline">Microsoft's Majorana 1 quantum chip</a> and <a href="https://www.linkedin.com/posts/asadullahalmunib_scientists-turn-light-into-a-supersolid-activity-7307704824156893185-47FO" target="_blank" rel="noopener" class="font-semibold text-violet-600 dark:text-violet-400 underline">light turned into a supersolid</a>.</p>
+    <div class="text-center mt-6">
+      <a href="https://munib.rf.gd/" target="_blank" rel="noopener" class="inline-block px-6 py-3 rounded-xl font-semibold border-2 border-violet-600 text-violet-600 dark:text-violet-400 hover:bg-violet-600 hover:text-white transition">📚 View All Writings</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+  <div class="reveal relative overflow-hidden rounded-3xl bg-gradient-to-br from-violet-600 via-fuchsia-600 to-sky-600 p-10 sm:p-14 text-center text-white shadow-2xl shadow-violet-500/30">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold">Let's Build Something <span class="text-amber-300">Amazing</span></h2>
+    <p class="mt-4 max-w-xl mx-auto opacity-90">Have a project idea, a question, or just want to say hi? My inbox is always open — reach me on any platform below.</p>
+    <a href="https://wa.me/+8801930008570" target="_blank" rel="noopener" class="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-violet-700 font-bold shadow-lg hover:scale-105 transition">✉️ Say Hello</a>
+    <div class="mt-8 flex flex-wrap justify-center gap-3" id="contactLinks"></div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="border-t border-slate-200/60 dark:border-slate-800/60 py-10 text-center text-sm text-slate-500 dark:text-slate-400">
+  <p>© <span id="year"></span> Md Asadullah Al Munib · Rangpur, Bangladesh</p>
+  <p class="mt-2">Built with curiosity, code & ☕ — <span class="gradient-text font-semibold">learning never stops.</span></p>
+</footer>
+
+</main>
+
+<script>
+// ===== Safe storage (sandbox-proof) =====
+const storage = {
+  _mem: {},
+  get(k){ try { return localStorage.getItem(k); } catch(e){ return this._mem[k] ?? null; } },
+  set(k,v){ try { localStorage.setItem(k,v); } catch(e){ this._mem[k]=v; } }
+};
+
+// ===== Theme =====
+const themeToggle = document.getElementById('themeToggle');
+if (storage.get('theme') === 'dark' || (!storage.get('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark');
+}
+themeToggle.addEventListener('click', () => {
+  document.documentElement.classList.toggle('dark');
+  storage.set('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  if (window.__update3DColors) window.__update3DColors();
+});
+
+// ===== Mobile menu =====
+document.getElementById('menuToggle').addEventListener('click', () =>
+  document.getElementById('mobileMenu').classList.toggle('hidden'));
+document.querySelectorAll('#mobileMenu a').forEach(a =>
+  a.addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden')));
+
+// ===== Social links =====
+const socials = [
+  { name:'Website',  url:'https://munib.rf.gd/', color:'from-violet-500 to-fuchsia-500', icon:'🌐' },
+  { name:'GitHub',   url:'https://github.com/AsadullahAlMunib', color:'from-slate-700 to-slate-900', icon:'★' },
+  { name:'LinkedIn', url:'https://linkedin.com/in/AsadullahAlMunib', color:'from-sky-500 to-sky-700', icon:'in' },
+  { name:'Facebook', url:'https://facebook.com/MdAsadullahAlMunib', color:'from-blue-500 to-blue-700', icon:'f' },
+  { name:'Facebook 2', url:'https://facebook.com/AsadullahAlMunib', color:'from-blue-600 to-indigo-700', icon:'f' },
+  { name:'Instagram',url:'https://instagram.com/AsadullahAlMunib', color:'from-rose-500 to-amber-500', icon:'◎' },
+  { name:'YouTube',  url:'https://youtube.com/@AsadullahAlMunib', color:'from-red-500 to-red-700', icon:'▶' },
+  { name:'X',        url:'https://x.com/asadullah_munib', color:'from-slate-800 to-black', icon:'𝕏' },
+  { name:'Telegram', url:'https://t.me/AsadullahAlMunib', color:'from-sky-400 to-cyan-600', icon:'✈' },
+  { name:'WhatsApp', url:'https://wa.me/+8801930008570', color:'from-emerald-400 to-emerald-600', icon:'✆' },
+];
+document.getElementById('socialLinks').innerHTML = socials.map(s =>
+  `<a href="${s.url}" target="_blank" rel="noopener" title="${s.name}" class="w-10 h-10 grid place-items-center rounded-xl bg-gradient-to-br ${s.color} text-white text-sm font-bold shadow-md hover:-translate-y-1 hover:shadow-lg transition">${s.icon}</a>`).join('');
+document.getElementById('contactLinks').innerHTML = socials.map(s =>
+  `<a href="${s.url}" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-white/15 backdrop-blur text-sm font-semibold hover:bg-white/30 transition">${s.name}</a>`).join('');
+
+// ===== Skills =====
+const skills = [
+  { name:'HTML', lvl:90, color:'from-orange-500 to-red-500', icon:'</>' },
+  { name:'CSS', lvl:85, color:'from-sky-500 to-blue-600', icon:'#' },
+  { name:'JavaScript', lvl:75, color:'from-yellow-400 to-amber-500', icon:'JS' },
+  { name:'PHP', lvl:60, color:'from-indigo-400 to-violet-600', icon:'php' },
+  { name:'MySQL', lvl:60, color:'from-cyan-500 to-teal-600', icon:'DB' },
+  { name:'Laravel', lvl:50, color:'from-red-500 to-rose-600', icon:'Ln' },
+  { name:'C', lvl:55, color:'from-blue-500 to-sky-700', icon:'C' },
+];
+document.getElementById('skillsGrid').innerHTML = skills.map(s => `
+  <div class="tilt card-hover p-5 rounded-2xl bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/70 dark:border-slate-800 text-center">
+    <div class="w-12 h-12 mx-auto grid place-items-center rounded-xl bg-gradient-to-br ${s.color} text-white font-bold font-display">${s.icon}</div>
+    <p class="mt-3 font-semibold">${s.name}</p>
+    <div class="mt-2 h-1.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+      <div class="h-full rounded-full bg-gradient-to-r ${s.color} transition-all duration-1000 skill-bar" style="width:0" data-lvl="${s.lvl}"></div>
+    </div>
+  </div>`).join('');
+
+// ===== Projects (all real repos) =====
+const projects = [
+  { title:'MathMind', tag:'AI · App ⭐5', tagColor:'bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300',
+    desc:'AI-powered gamified math quiz app with offline fallback, bilingual support, achievements, themes & an Android APK.',
+    tech:['JS','AI','Android'], link:'https://github.com/AsadullahAlMunib/MathMind', emoji:'🧠' },
+  { title:'TTAS Animation', tag:'JavaScript Library', tagColor:'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300',
+    desc:'Text Typing Animation Screen with simple installation. v1.3.1 · Built 7–10 Sep 2025.',
+    tech:['JavaScript'], link:'https://github.com/AsadullahAlMunib', emoji:'⌨️' },
+  { title:'Acode_Plugin', tag:'Editor Plugin ⭐2', tagColor:'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300',
+    desc:'A plugin for the Acode code editor — extending mobile coding workflows.',
+    tech:['JS','Acode'], link:'https://github.com/AsadullahAlMunib/Acode_Plugin', emoji:'🧩' },
+  { title:'C_Programming', tag:'Learning', tagColor:'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
+    desc:'My C programming journey — regular practice and projects to become a better programmer.',
+    tech:['C'], link:'https://github.com/AsadullahAlMunib/C_Programming', emoji:'⚙️' },
+  { title:'canvasAnimationAI', tag:'Creative', tagColor:'bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300',
+    desc:'Canvas animation experiments blending code with creative visuals.',
+    tech:['JS','Canvas'], link:'https://github.com/AsadullahAlMunib/canvasAnimationAI', emoji:'🎨' },
+  { title:'ICTclubWEB', tag:'Web', tagColor:'bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/40 dark:text-fuchsia-300',
+    desc:'Website for the ICT club — bringing the school tech community online.',
+    tech:['HTML','CSS','JS'], link:'https://github.com/AsadullahAlMunib/ICTclubWEB', emoji:'🏫' },
+  { title:'dashboardDesign', tag:'UI Design', tagColor:'bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300',
+    desc:'A modern dashboard interface design project.',
+    tech:['HTML','CSS','JS'], link:'https://github.com/AsadullahAlMunib/dashboardDesign', emoji:'📊' },
+  { title:'Converter-Calculator App', tag:'Mobile App', tagColor:'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300',
+    desc:'Converter-Calculator mobile app built with Flutter Lab — a work in progress.',
+    tech:['Flutter','Mobile'], link:'https://github.com/AsadullahAlMunib', emoji:'🧮' },
+  { title:'QR Code Generator', tag:'Tools', tagColor:'bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300',
+    desc:'QR code generator tool using external API integration (QRserver). Built 19–24 Jul 2025.',
+    tech:['JS','API'], link:'https://github.com/AsadullahAlMunib/QRcodeGenerator', emoji:'📱' },
+  { title:'Login & Register', tag:'Design', tagColor:'bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300',
+    desc:'Login & Registration page design with 5 theme colors. Built 6–11 Aug 2025.',
+    tech:['HTML','CSS','JS'], link:'https://github.com/AsadullahAlMunib', emoji:'🔐' },
+  { title:'Responsive Portfolio', tag:'Web', tagColor:'bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/40 dark:text-fuchsia-300',
+    desc:'Fully responsive portfolio built with Bootstrap and pure JS — completed 05 Oct 2025.',
+    tech:['HTML','Bootstrap','JS'], link:'https://munib.rf.gd/', emoji:'💼' },
+  { title:'LogicFix', tag:'Problem Solving', tagColor:'bg-lime-100 text-lime-700 dark:bg-lime-900/40 dark:text-lime-300',
+    desc:'Problem-solving practice repository — sharpening logic and algorithms.',
+    tech:['C','Algorithms'], link:'https://github.com/AsadullahAlMunib', emoji:'🧷' },
+];
+document.getElementById('projectsGrid').innerHTML = projects.map(p => `
+  <article class="tilt card-hover flex flex-col p-7 rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur border border-slate-200/70 dark:border-slate-800 shadow-sm hover:shadow-xl">
+    <div class="flex items-center justify-between">
+      <span class="text-4xl">${p.emoji}</span>
+      <span class="px-3 py-1 rounded-full text-xs font-bold ${p.tagColor}">${p.tag}</span>
+    </div>
+    <h3 class="mt-4 font-display text-lg font-bold">${p.title}</h3>
+    <p class="mt-2 flex-1 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">${p.desc}</p>
+    <div class="mt-4 flex flex-wrap gap-2">
+      ${p.tech.map(t => `<span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">${t}</span>`).join('')}
+    </div>
+    <a href="${p.link}" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-violet-600 dark:text-violet-400 hover:gap-2 transition-all">View Project →</a>
+  </article>`).join('');
+
+// ===== Typing effect =====
+const roles = ['Student & Web Developer','ICT Olympiad Ambassador','Tech Explorer','Creative Writer','Problem Solver'];
+const typed = document.getElementById('typed');
+let ri=0, ci=0, deleting=false;
+(function type(){
+  const w = roles[ri];
+  typed.textContent = w.slice(0,ci);
+  if(!deleting && ci<w.length){ ci++; setTimeout(type,70); }
+  else if(deleting && ci>0){ ci--; setTimeout(type,35); }
+  else if(!deleting){ deleting=true; setTimeout(type,1600); }
+  else { deleting=false; ri=(ri+1)%roles.length; setTimeout(type,300); }
+})();
+
+// ===== Counters =====
+const counterIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(!e.isIntersecting) return;
+    const el = e.target, target = +el.dataset.target;
+    let cur = 0;
+    const step = Math.max(1, Math.round(target/40));
+    const t = setInterval(() => { cur += step; if(cur>=target){ cur=target; clearInterval(t);} el.textContent = cur; }, 40);
+    counterIO.unobserve(el);
+  });
+}, { threshold:.5 });
+document.querySelectorAll('.counter').forEach(el => counterIO.observe(el));
+
+// ===== Scroll reveal =====
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+}, { threshold:.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const skillIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.style.width = e.target.dataset.lvl+'%'; skillIO.unobserve(e.target);} });
+}, { threshold:.4 });
+document.querySelectorAll('.skill-bar').forEach(el => skillIO.observe(el));
+
+// ===== 3D Tilt cards =====
+document.addEventListener('mousemove', e => {
+  const card = e.target.closest?.('.tilt');
+  document.querySelectorAll('.tilt').forEach(c => { if(c!==card) c.style.transform=''; });
+  if(!card) return;
+  const r = card.getBoundingClientRect();
+  const x = (e.clientX - r.left)/r.width - .5, y = (e.clientY - r.top)/r.height - .5;
+  card.style.transform = `perspective(800px) rotateY(${x*10}deg) rotateX(${-y*10}deg) translateZ(8px)`;
+});
+
+// ===== Three.js 3D Hero =====
+(function(){
+  const container = document.getElementById('hero3d');
+  if (typeof THREE === 'undefined') return;
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, container.clientWidth/container.clientHeight, .1, 100);
+  camera.position.z = 26;
+  const renderer = new THREE.WebGLRenderer({ alpha:true, antialias:true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  // Particle sphere
+  const count = 1400, pos = new Float32Array(count*3), colors = new Float32Array(count*3);
+  const palette = [new THREE.Color(0x8b5cf6), new THREE.Color(0xd946ef), new THREE.Color(0x0ea5e9)];
+  for(let i=0;i<count;i++){
+    const r = 13 + Math.random()*2, th = Math.random()*Math.PI*2, ph = Math.acos(2*Math.random()-1);
+    pos[i*3] = r*Math.sin(ph)*Math.cos(th); pos[i*3+1] = r*Math.sin(ph)*Math.sin(th); pos[i*3+2] = r*Math.cos(ph);
+    const c = palette[i%3]; colors[i*3]=c.r; colors[i*3+1]=c.g; colors[i*3+2]=c.b;
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(pos,3));
+  geo.setAttribute('color', new THREE.BufferAttribute(colors,3));
+  const particles = new THREE.Points(geo, new THREE.PointsMaterial({ size:.22, vertexColors:true, transparent:true, opacity:.9 }));
+  scene.add(particles);
+
+  // Wireframe icosahedron core
+  const core = new THREE.Mesh(new THREE.IcosahedronGeometry(7.5,1),
+    new THREE.MeshBasicMaterial({ color:0x8b5cf6, wireframe:true, transparent:true, opacity:.18 }));
+  scene.add(core);
+
+  // Floating code-ish torus rings
+  const ring1 = new THREE.Mesh(new THREE.TorusGeometry(10,.06,8,80), new THREE.MeshBasicMaterial({ color:0xd946ef, transparent:true, opacity:.5 }));
+  ring1.rotation.x = Math.PI/2.4; scene.add(ring1);
+  const ring2 = new THREE.Mesh(new THREE.TorusGeometry(12,.05,8,80), new THREE.MeshBasicMaterial({ color:0x0ea5e9, transparent:true, opacity:.4 }));
+  ring2.rotation.x = Math.PI/1.7; ring2.rotation.y = .5; scene.add(ring2);
+
+  let mx=0, my=0;
+  window.addEventListener('mousemove', e => {
+    mx = (e.clientX/window.innerWidth - .5); my = (e.clientY/window.innerHeight - .5);
+  });
+  window.__update3DColors = () => {
+    const dark = document.documentElement.classList.contains('dark');
+    particles.material.opacity = dark ? .95 : .7;
+    core.material.opacity = dark ? .3 : .14;
+  };
+  window.__update3DColors();
+
+  let t = 0;
+  (function animate(){
+    requestAnimationFrame(animate);
+    t += .003;
+    particles.rotation.y = t + mx*.6;
+    particles.rotation.x = my*.4;
+    core.rotation.y = -t*1.4; core.rotation.z = t*.4;
+    ring1.rotation.z = t*2; ring2.rotation.z = -t*1.5;
+    camera.position.x += (mx*4 - camera.position.x)*.04;
+    camera.position.y += (-my*3 - camera.position.y)*.04;
+    camera.lookAt(0,0,0);
+    renderer.render(scene, camera);
+  })();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = container.clientWidth/container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  });
+})();
+
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
