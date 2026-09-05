@@ -172,11 +172,11 @@
 <body x-data="app" class="bg-zinc-50 text-zinc-800 dark:bg-zinc-950 dark:text-zinc-200 antialiased overflow-x-hidden selection:bg-indigo-500/30" @keydown.escape.window="menuOpen = false; langOpen = false">
 
   <!-- ================= NAVBAR ================= -->
-  <header class="fixed top-0 inset-x-0 z-50 t" :class="scrolled || menuOpen ? 'glass border-b border-zinc-200/70 dark:border-white/10 shadow-sm' : 'bg-transparent border-b border-transparent'">
-    <nav class="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8" aria-label="Main">
-      <div class="flex h-16 items-center justify-between gap-4">
+  <header class="fixed top-0 left-0 right-0 w-full z-50 t" :class="scrolled || menuOpen ? 'glass border-b border-zinc-200/70 dark:border-white/10 shadow-sm' : 'bg-transparent border-b border-transparent'">
+    <nav class="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8" aria-label="Main">
+      <div class="flex h-16 items-center justify-between gap-2 sm:gap-4">
         <!-- Logo -->
-        <a href="#home" class="flex items-center gap-2.5 group" @click="menuOpen=false">
+        <a href="#home" class="flex items-center gap-2 sm:gap-2.5 group shrink-0" @click="menuOpen=false">
           <span class="grid h-9 w-9 place-items-center rounded-xl grad-bg text-white font-extrabold text-lg shadow-lg shadow-indigo-500/30 transition-transform group-hover:scale-105">M</span>
           <span class="text-lg font-bold tracking-tight text-zinc-900 dark:text-white ltr" dir="ltr">Munib<span class="grad-text">.</span></span>
         </a>
@@ -194,13 +194,13 @@
         </ul>
 
         <!-- Right controls -->
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
           <!-- Language dropdown -->
           <div class="relative" @click.outside="langOpen = false">
-            <button type="button" @click="langOpen = !langOpen" :aria-expanded="langOpen" :aria-label="t('lang_label')" class="flex items-center gap-1.5 h-9 px-3 rounded-lg text-sm font-semibold border border-zinc-200 dark:border-white/10 bg-white/60 dark:bg-white/5 hover:border-indigo-400/60 transition-colors">
+            <button type="button" @click="langOpen = !langOpen" :aria-expanded="langOpen" :aria-label="t('lang_label')" class="flex items-center gap-1 sm:gap-1.5 h-9 px-2 sm:px-3 rounded-lg text-xs sm:text-sm font-semibold border border-zinc-200 dark:border-white/10 bg-white/60 dark:bg-white/5 hover:border-indigo-400/60 transition-colors">
               <i class="fa-solid fa-globe text-indigo-500 text-xs"></i>
               <span class="uppercase ltr" dir="ltr" x-text="lang"></span>
-              <i class="fa-solid fa-chevron-down text-[10px] transition-transform" :class="langOpen ? 'rotate-180' : ''"></i>
+              <i class="fa-solid fa-chevron-down text-[9px] sm:text-[10px] transition-transform" :class="langOpen ? 'rotate-180' : ''"></i>
             </button>
             <div x-cloak x-show="langOpen" x-transition.origin.top.right.opacity.scale.95 class="absolute end-0 mt-2 w-40 rounded-xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-zinc-900 shadow-xl shadow-black/10 p-1.5 z-50">
               <template x-for="L in languages" :key="L.code">
@@ -226,8 +226,15 @@
       </div>
 
       <!-- Mobile menu -->
-      <div x-cloak x-show="menuOpen" x-transition.opacity.duration.200ms class="md:hidden pb-4">
-        <ul class="flex flex-col gap-1 pt-2 border-t border-zinc-200/70 dark:border-white/10">
+      <div x-cloak x-show="menuOpen" 
+           x-transition:enter="transition ease-out duration-200"
+           x-transition:enter-start="opacity-0 -translate-y-2"
+           x-transition:enter-end="opacity-100 translate-y-0"
+           x-transition:leave="transition ease-in duration-150"
+           x-transition:leave-start="opacity-100 translate-y-0"
+           x-transition:leave-end="opacity-0 -translate-y-2"
+           class="md:hidden border-t border-zinc-200/70 dark:border-white/10 mt-2 pb-4 max-h-[calc(100vh-5rem)] overflow-y-auto">
+        <ul class="flex flex-col gap-1 pt-2">
           <template x-for="l in nav" :key="'m' + l.id">
             <li>
               <a :href="'#' + l.id" @click="menuOpen = false" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-colors" :class="active === l.id ? 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400' : 'text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5'">
@@ -335,7 +342,7 @@
     </section>
 
     <!-- ================= ABOUT ================= -->
-    <section id="about" class="relative py-24">
+    <section id="about" class="relative py-24 overflow-hidden">
       <div class="orb orb-violet w-[28rem] h-[28rem] -end-48 top-0" aria-hidden="true"></div>
       <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="reveal max-w-2xl">
@@ -402,7 +409,7 @@
     </section>
 
     <!-- ================= SKILLS ================= -->
-    <section id="skills" class="relative py-24">
+    <section id="skills" class="relative py-24 overflow-hidden">
       <div class="orb orb-cyan w-[30rem] h-[30rem] -start-56 top-10" aria-hidden="true"></div>
       <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="reveal max-w-2xl">
@@ -464,7 +471,7 @@
     </section>
 
     <!-- ================= PROJECTS ================= -->
-    <section id="projects" class="relative py-24">
+    <section id="projects" class="relative py-24 overflow-hidden">
       <div class="orb orb-indigo w-[34rem] h-[34rem] -end-60 top-1/4" aria-hidden="true"></div>
       <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="reveal max-w-2xl">
@@ -581,7 +588,7 @@
     </section>
 
     <!-- ================= JOURNEY ================= -->
-    <section id="journey" class="relative py-24">
+    <section id="journey" class="relative py-24 overflow-hidden">
       <div class="orb orb-violet w-[30rem] h-[30rem] -start-60 bottom-0" aria-hidden="true"></div>
       <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="reveal max-w-2xl">
@@ -609,7 +616,7 @@
     </section>
 
     <!-- ================= CONTACT ================= -->
-    <section id="contact" class="relative py-24">
+    <section id="contact" class="relative py-24 overflow-hidden">
       <div class="orb orb-cyan w-[30rem] h-[30rem] -end-56 top-10" aria-hidden="true"></div>
       <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="reveal max-w-2xl">
