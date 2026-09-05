@@ -93,7 +93,7 @@
 
   <style>
     [x-cloak] { display: none !important; }
-    html { width: 100%; scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; }
     body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
     html[data-lang="bn"] body { font-family: 'Hind Siliguri', 'Inter', sans-serif; }
     html[data-lang="ar"] body { font-family: 'Tajawal', 'Inter', sans-serif; }
@@ -173,7 +173,7 @@
 
   <!-- ================= NAVBAR ================= -->
   <header class="fixed top-0 inset-x-0 z-50 t" :class="scrolled || menuOpen ? 'glass border-b border-zinc-200/70 dark:border-white/10 shadow-sm' : 'bg-transparent border-b border-transparent'">
-    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Main">
+    <nav class="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8" aria-label="Main">
       <div class="flex h-16 items-center justify-between gap-4">
         <!-- Logo -->
         <a href="#home" class="flex items-center gap-2.5 group" @click="menuOpen=false">
