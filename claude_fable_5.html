@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Apply saved theme + language BEFORE first paint (no flash) -->
+  <script>
+    (function () {
+      try {
+        var h = document.documentElement;
+        var t = localStorage.getItem('theme') || 'dark';
+        if (t === 'dark') { h.classList.add('dark'); } else { h.classList.remove('dark'); }
+        var l = localStorage.getItem('lang') || 'en';
+        if (['en', 'bn', 'ar'].indexOf(l) === -1) l = 'en';
+        h.setAttribute('lang', l);
+        h.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr');
+        h.setAttribute('data-lang', l);
+      } catch (e) {}
+    })();
+  </script>
+
+  <title>Md Asadullah Al Munib — Student & Aspiring Web Developer</title>
+  <meta name="description" content="Portfolio of Md Asadullah Al Munib — a student and aspiring web developer from Rangpur, Bangladesh, building responsive websites with HTML, CSS, JavaScript, PHP & Laravel.">
+  <meta name="author" content="Md Asadullah Al Munib">
+  <meta name="theme-color" content="#09090b">
+  <link rel="canonical" href="https://munib.rf.gd/">
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/163411448?v=4">
+  <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/163411448?v=4">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Md Asadullah Al Munib — Student & Aspiring Web Developer">
+  <meta property="og:description" content="Responsive websites, small web tools and open-source experiments — built with HTML, CSS, JavaScript, PHP & Laravel.">
+  <meta property="og:url" content="https://munib.rf.gd/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/163411448?v=4">
+  <meta property="og:site_name" content="Munib.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@Asadullah_Munib">
+  <meta name="twitter:title" content="Md Asadullah Al Munib — Student & Aspiring Web Developer">
+  <meta name="twitter:description" content="Responsive websites, small web tools and open-source experiments — built with HTML, CSS, JavaScript, PHP & Laravel.">
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/163411448?v=4">
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.github.com" crossorigin>
+  <link rel="preconnect" href="https://avatars.githubusercontent.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+  <!-- Fonts: Inter (EN), Hind Siliguri (BN), Tajawal (AR) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+
+  <!-- JSON-LD Person schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Md Asadullah Al Munib",
+    "url": "https://munib.rf.gd/",
+    "image": "https://avatars.githubusercontent.com/u/163411448?v=4",
+    "email": "mailto:asadullahweb1@gmail.com",
+    "jobTitle": "Student & Aspiring Web Developer",
+    "address": { "@type": "PostalAddress", "addressLocality": "Rangpur", "addressCountry": "BD" },
+    "alumniOf": { "@type": "EducationalOrganization", "name": "Dhap Satgara B. M. Model Kamil Madrasah" },
+    "sameAs": [
+      "https://asadullahalmunib.github.io/Portfolio/",
+      "https://github.com/AsadullahAlMunib/",
+      "https://facebook.com/MdAsadullahAlMunib/",
+      "https://facebook.com/AsadullahAlMunib/",
+      "https://linkedin.com/in/AsadullahAlMunib/",
+      "https://instagram.com/AsadullahAlMunib/",
+      "https://x.com/Asadullah_Munib/"
+    ]
+  }
+  </script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    html[data-lang="bn"] body { font-family: 'Hind Siliguri', 'Inter', sans-serif; }
+    html[data-lang="ar"] body { font-family: 'Tajawal', 'Inter', sans-serif; }
+    html[data-lang="bn"] .ltr, html[data-lang="ar"] .ltr { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+
+    /* Gradient scrollbar */
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: #09090b; }
+    html:not(.dark) ::-webkit-scrollbar-track { background: #f4f4f5; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #6366f1, #06b6d4, #8b5cf6); border-radius: 999px; border: 2px solid transparent; background-clip: padding-box; }
+
+    /* Smooth theme transitions */
+    body, .t { transition: background-color .35s ease, border-color .35s ease, color .2s ease; }
+
+    /* Gradient text */
+    .grad-text { background: linear-gradient(90deg, #6366f1 0%, #06b6d4 50%, #8b5cf6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .grad-bg { background: linear-gradient(90deg, #6366f1, #06b6d4, #8b5cf6); }
+    .grad-border { position: relative; }
+    .grad-border::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(135deg, rgba(99,102,241,.6), rgba(6,182,212,.4), rgba(139,92,246,.6)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+
+    /* Glassmorphism — navbar only */
+    .glass { background: rgba(9, 9, 11, .72); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+    html:not(.dark) .glass { background: rgba(250, 250, 250, .78); }
+
+    /* Radial-gradient orbs (no filter: blur) */
+    .orb { position: absolute; border-radius: 9999px; pointer-events: none; }
+    .orb-indigo { background: radial-gradient(circle at center, rgba(99,102,241,.35) 0%, rgba(99,102,241,0) 70%); }
+    .orb-cyan { background: radial-gradient(circle at center, rgba(6,182,212,.30) 0%, rgba(6,182,212,0) 70%); }
+    .orb-violet { background: radial-gradient(circle at center, rgba(139,92,246,.30) 0%, rgba(139,92,246,0) 70%); }
+    html:not(.dark) .orb-indigo { background: radial-gradient(circle at center, rgba(99,102,241,.22) 0%, rgba(99,102,241,0) 70%); }
+    html:not(.dark) .orb-cyan { background: radial-gradient(circle at center, rgba(6,182,212,.20) 0%, rgba(6,182,212,0) 70%); }
+    html:not(.dark) .orb-violet { background: radial-gradient(circle at center, rgba(139,92,246,.18) 0%, rgba(139,92,246,0) 70%); }
+
+    /* Subtle grid */
+    .grid-bg { background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 44px 44px; -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%); mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%); }
+    html:not(.dark) .grid-bg { background-image: linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.06) 1px, transparent 1px); }
+
+    /* Reveal (opacity + translateY only) */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal.d1 { transition-delay: .08s; } .reveal.d2 { transition-delay: .16s; } .reveal.d3 { transition-delay: .24s; }
+
+    /* Avatar conic ring */
+    .ring-spin { background: conic-gradient(from 0deg, #6366f1, #06b6d4, #8b5cf6, #6366f1); animation: spin 7s linear infinite; will-change: transform; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Floating badges */
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .float { animation: float 5s ease-in-out infinite; }
+    .float.d1 { animation-delay: -1.6s; } .float.d2 { animation-delay: -3.2s; }
+
+    /* Card lift */
+    .card-lift { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+    .card-lift:hover { transform: translateY(-6px); }
+
+    /* Pulse dot */
+    @keyframes pulse-ring { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(2.4); opacity: 0; } }
+    .pulse-dot::after { content: ""; position: absolute; inset: 0; border-radius: 9999px; background: #22c55e; animation: pulse-ring 1.6s ease-out infinite; }
+
+    /* Scroll indicator */
+    @keyframes wheel { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(10px); opacity: 0; } }
+    .wheel { animation: wheel 1.6s ease-in-out infinite; }
+
+    /* Timeline */
+    .tl-line::before { content: ""; position: absolute; top: 0; bottom: 0; inset-inline-start: 1.1rem; width: 2px; background: linear-gradient(180deg, #6366f1, #06b6d4, #8b5cf6); opacity: .5; }
+
+    .code-font { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body x-data="app" class="bg-zinc-50 text-zinc-800 dark:bg-zinc-950 dark:text-zinc-200 antialiased overflow-x-hidden selection:bg-indigo-500/30" @keydown.escape.window="menuOpen = false; langOpen = false">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="fixed top-0 inset-x-0 z-50 t" :class="scrolled || menuOpen ? 'glass border-b border-zinc-200/70 dark:border-white/10 shadow-sm' : 'bg-transparent border-b border-transparent'">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Main">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2.5 group" @click="menuOpen=false">
+          <span class="grid h-9 w-9 place-items-center rounded-xl grad-bg text-white font-extrabold text-lg shadow-lg shadow-indigo-500/30 transition-transform group-hover:scale-105">M</span>
+          <span class="text-lg font-bold tracking-tight text-zinc-900 dark:text-white ltr" dir="ltr">Munib<span class="grad-text">.</span></span>
+        </a>
+
+        <!-- Desktop links -->
+        <ul class="hidden md:flex items-center gap-1">
+          <template x-for="l in nav" :key="l.id">
+            <li>
+              <a :href="'#' + l.id" class="relative px-3 py-2 text-sm font-medium rounded-lg transition-colors" :class="active === l.id ? 'text-zinc-900 dark:text-white' : 'text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'">
+                <span x-text="t(l.k)"></span>
+                <span class="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full grad-bg transition-opacity" :class="active === l.id ? 'opacity-100' : 'opacity-0'"></span>
+              </a>
+            </li>
+          </template>
+        </ul>
+
+        <!-- Right controls -->
+        <div class="flex items-center gap-2">
+          <!-- Language dropdown -->
+          <div class="relative" @click.outside="langOpen = false">
+            <button type="button" @click="langOpen = !langOpen" :aria-expanded="langOpen" :aria-label="t('lang_label')" class="flex items-center gap-1.5 h-9 px-3 rounded-lg text-sm font-semibold border border-zinc-200 dark:border-white/10 bg-white/60 dark:bg-white/5 hover:border-indigo-400/60 transition-colors">
+              <i class="fa-solid fa-globe text-indigo-500 text-xs"></i>
+              <span class="uppercase ltr" dir="ltr" x-text="lang"></span>
+              <i class="fa-solid fa-chevron-down text-[10px] transition-transform" :class="langOpen ? 'rotate-180' : ''"></i>
+            </button>
+            <div x-cloak x-show="langOpen" x-transition.origin.top.right.opacity.scale.95 class="absolute end-0 mt-2 w-40 rounded-xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-zinc-900 shadow-xl shadow-black/10 p-1.5 z-50">
+              <template x-for="L in languages" :key="L.code">
+                <button type="button" @click="setLang(L.code)" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors hover:bg-zinc-100 dark:hover:bg-white/5" :class="lang === L.code ? 'text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-zinc-700 dark:text-zinc-300'">
+                  <span x-text="L.label" :dir="L.code === 'ar' ? 'rtl' : 'ltr'"></span>
+                  <span class="text-[10px] uppercase tracking-wider text-zinc-400 ltr" dir="ltr" x-text="L.code"></span>
+                </button>
+              </template>
+            </div>
+          </div>
+
+          <!-- Theme toggle -->
+          <button type="button" @click="toggleTheme()" :aria-label="t('theme_toggle')" class="grid h-9 w-9 place-items-center rounded-lg border border-zinc-200 dark:border-white/10 bg-white/60 dark:bg-white/5 hover:border-indigo-400/60 transition-colors">
+            <i class="fa-solid fa-sun text-amber-400" x-show="theme === 'dark'"></i>
+            <i class="fa-solid fa-moon text-indigo-600" x-cloak x-show="theme === 'light'"></i>
+          </button>
+
+          <!-- Hamburger -->
+          <button type="button" @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" :aria-label="t('menu')" class="md:hidden grid h-9 w-9 place-items-center rounded-lg border border-zinc-200 dark:border-white/10 bg-white/60 dark:bg-white/5">
+            <i class="fa-solid" :class="menuOpen ? 'fa-xmark' : 'fa-bars'"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div x-cloak x-show="menuOpen" x-transition.opacity.duration.200ms class="md:hidden pb-4">
+        <ul class="flex flex-col gap-1 pt-2 border-t border-zinc-200/70 dark:border-white/10">
+          <template x-for="l in nav" :key="'m' + l.id">
+            <li>
+              <a :href="'#' + l.id" @click="menuOpen = false" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-colors" :class="active === l.id ? 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400' : 'text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5'">
+                <span x-text="t(l.k)"></span>
+                <i class="fa-solid fa-arrow-right text-xs opacity-50 rtl:rotate-180"></i>
+              </a>
+            </li>
+          </template>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section id="home" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+      <div class="absolute inset-0 grid-bg" aria-hidden="true"></div>
+      <div class="orb orb-indigo w-[38rem] h-[38rem] -top-40 -start-40" aria-hidden="true"></div>
+      <div class="orb orb-cyan w-[32rem] h-[32rem] top-1/3 -end-40" aria-hidden="true"></div>
+      <div class="orb orb-violet w-[26rem] h-[26rem] -bottom-32 start-1/3" aria-hidden="true"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <!-- Text -->
+          <div class="lg:col-span-7 text-center lg:text-start">
+            <div class="reveal inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+              <span class="relative grid place-items-center h-2 w-2"><span class="pulse-dot absolute inset-0 rounded-full"></span><span class="relative h-2 w-2 rounded-full bg-emerald-500"></span></span>
+              <span x-text="t('available')">Open to opportunities</span>
+            </div>
+
+            <p class="reveal d1 mt-6 text-lg font-medium text-zinc-500 dark:text-zinc-400" x-text="t('greeting')">Hi, I'm</p>
+            <h1 class="reveal d1 mt-2 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.1]">
+              <span class="grad-text" x-text="t('name')">Md Asadullah Al Munib</span>
+            </h1>
+            <p x-cloak x-show="lang !== 'en'" class="mt-2 text-sm font-medium text-zinc-400 ltr" dir="ltr">Md Asadullah Al Munib</p>
+            <h2 class="reveal d2 mt-4 text-xl sm:text-2xl lg:text-3xl font-bold text-zinc-800 dark:text-zinc-100" x-text="t('title')">Student & Aspiring Web Developer</h2>
+            <p class="reveal d2 mt-4 max-w-2xl mx-auto lg:mx-0 text-base sm:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400" x-text="t('tagline')">I build responsive websites and small web tools with HTML, CSS, JavaScript, PHP & Laravel — and I write about science and technology along the way.</p>
+
+            <!-- CTAs -->
+            <div class="reveal d3 mt-8 flex flex-wrap justify-center lg:justify-start gap-3">
+              <a href="#projects" class="inline-flex items-center gap-2 rounded-xl grad-bg px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition-transform hover:-translate-y-0.5">
+                <i class="fa-solid fa-layer-group"></i><span x-text="t('cta_projects')">View Projects</span>
+              </a>
+              <a href="#contact" class="inline-flex items-center gap-2 rounded-xl border border-zinc-300 dark:border-white/15 bg-white/70 dark:bg-white/5 px-5 py-3 text-sm font-semibold text-zinc-800 dark:text-zinc-100 transition-all hover:-translate-y-0.5 hover:border-indigo-400/60">
+                <i class="fa-solid fa-envelope text-indigo-500"></i><span x-text="t('cta_contact')">Get in Touch</span>
+              </a>
+              <a :href="cfg.social.github" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl border border-zinc-300 dark:border-white/15 bg-white/70 dark:bg-white/5 px-5 py-3 text-sm font-semibold text-zinc-800 dark:text-zinc-100 transition-all hover:-translate-y-0.5 hover:border-indigo-400/60">
+                <i class="fa-brands fa-github text-lg"></i><span x-text="t('cta_github')">GitHub</span>
+              </a>
+            </div>
+
+            <!-- Live stats -->
+            <div class="reveal d3 mt-10 grid grid-cols-3 gap-3 max-w-xl mx-auto lg:mx-0">
+              <div class="rounded-2xl border border-zinc-200 dark:border-white/10 bg-white/70 dark:bg-white/5 p-4 text-center lg:text-start t">
+                <p class="text-2xl sm:text-3xl font-extrabold grad-text ltr" dir="ltr">
+                  <span x-show="gh.user" x-text="gh.user ? n(gh.user.public_repos) : ''"></span>
+                  <span x-show="!gh.user" class="inline-block h-7 w-10 rounded-md bg-zinc-200 dark:bg-white/10 animate-pulse align-middle"></span>
+                </p>
+                <p class="mt-1 text-xs font-medium text-zinc-500 dark:text-zinc-400" x-text="t('stat_repos')">Public repos</p>
+              </div>
+              <div class="rounded-2xl border border-zinc-200 dark:border-white/10 bg-white/70 dark:bg-white/5 p-4 text-center lg:text-start t">
+                <p class="text-2xl sm:text-3xl font-extrabold grad-text ltr" dir="ltr">
+                  <span x-show="gh.user" x-text="gh.user ? n(gh.user.followers) : ''"></span>
+                  <span x-show="!gh.user" class="inline-block h-7 w-10 rounded-md bg-zinc-200 dark:bg-white/10 animate-pulse align-middle"></span>
+                </p>
+                <p class="mt-1 text-xs font-medium text-zinc-500 dark:text-zinc-400" x-text="t('stat_followers')">Followers</p>
+              </div>
+              <div class="rounded-2xl border border-zinc-200 dark:border-white/10 bg-white/70 dark:bg-white/5 p-4 text-center lg:text-start t">
+                <p class="text-2xl sm:text-3xl font-extrabold grad-text" x-text="n(sinceYear, {useGrouping:false})">2024</p>
+                <p class="mt-1 text-xs font-medium text-zinc-500 dark:text-zinc-400" x-text="t('stat_since')">On GitHub since</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Avatar -->
+          <div class="lg:col-span-5 flex justify-center reveal d2">
+            <div class="relative w-64 h-64 sm:w-80 sm:h-80">
+              <div class="absolute -inset-1.5 rounded-full ring-spin" aria-hidden="true"></div>
+              <div class="absolute inset-0 rounded-full bg-zinc-50 dark:bg-zinc-950 t"></div>
+              <img src="https://avatars.githubusercontent.com/u/163411448?v=4" alt="Portrait of Md Asadullah Al Munib" width="320" height="320" decoding="async" fetchpriority="high" class="absolute inset-1.5 rounded-full object-cover w-[calc(100%-0.75rem)] h-[calc(100%-0.75rem)] border-4 border-zinc-50 dark:border-zinc-950 t">
+
+              <!-- Floating badges -->
+              <div class="float absolute -top-3 -end-6 sm:-end-10 flex items-center gap-2 rounded-xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-zinc-900 px-3 py-2 shadow-xl shadow-black/10 ltr" dir="ltr">
+                <span class="grid h-7 w-7 place-items-center rounded-lg bg-yellow-400 text-zinc-900 font-extrabold text-xs code-font">JS</span>
+                <span class="text-sm font-semibold text-zinc-800 dark:text-zinc-100">JavaScript</span>
+              </div>
+              <div class="float d1 absolute bottom-6 -start-8 sm:-start-14 flex items-center gap-2 rounded-xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-zinc-900 px-3 py-2 shadow-xl shadow-black/10 ltr" dir="ltr">
+                <span class="grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-br from-pink-500 to-violet-500 text-white"><i class="fa-solid fa-pen-ruler text-xs"></i></span>
+                <span class="text-sm font-semibold text-zinc-800 dark:text-zinc-100">UI/UX</span>
+              </div>
+              <div class="float d2 absolute -bottom-4 end-4 sm:end-2 flex items-center gap-2 rounded-xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-zinc-900 px-3 py-2 shadow-xl shadow-black/10 ltr" dir="ltr">
+                <span class="grid h-7 w-7 place-items-center rounded-lg bg-sky-600 text-white font-extrabold text-xs code-font">C</span>
+                <span class="text-sm font-semibold text-zinc-800 dark:text-zinc-100">C Language</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <a href="#about" class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 text-zinc-400 hover:text-indigo-500 transition-colors">
+        <span class="text-[11px] uppercase tracking-[0.2em]" x-text="t('scroll')">Scroll</span>
+        <span class="h-9 w-5 rounded-full border-2 border-current flex justify-center pt-1.5"><span class="wheel h-1.5 w-1 rounded-full bg-current"></span></span>
+      </a>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="relative py-24">
+      <div class="orb orb-violet w-[28rem] h-[28rem] -end-48 top-0" aria-hidden="true"></div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-500" x-text="t('about_kicker')">About Me</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white" x-text="t('about_heading')">A student who loves to build</h2>
+        </div>
+
+        <div class="mt-12 grid lg:grid-cols-12 gap-10">
+          <!-- Story -->
+          <div class="lg:col-span-7 space-y-5 text-base sm:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+            <p class="reveal" x-text="t('about_p1')"></p>
+            <p class="reveal" x-text="t('about_p2')"></p>
+            <p class="reveal" x-text="t('about_p3')"></p>
+            <p class="reveal" x-text="t('about_p4')"></p>
+
+            <!-- Recognition -->
+            <div class="reveal pt-2">
+              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400" x-text="t('honors_kicker')">Recognition</p>
+              <ul class="mt-3 space-y-2 text-sm sm:text-base">
+                <li class="flex items-start gap-3"><i class="fa-solid fa-medal mt-1 text-amber-500"></i><span x-text="t('honor1')"></span></li>
+                <li class="flex items-start gap-3"><i class="fa-solid fa-award mt-1 text-cyan-500"></i><span x-text="t('honor2')"></span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Cards -->
+          <div class="lg:col-span-5 grid sm:grid-cols-2 gap-4 content-start">
+            <div class="reveal card-lift rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-5 t">
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-indigo-500/10 text-indigo-500"><i class="fa-solid fa-bullseye"></i></span>
+              <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-zinc-400" x-text="t('card_focus')">Core focus</p>
+              <p class="mt-1 font-semibold text-zinc-900 dark:text-white" x-text="t('card_focus_v')"></p>
+            </div>
+            <div class="reveal d1 card-lift rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-5 t">
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-cyan-500/10 text-cyan-500"><i class="fa-solid fa-location-dot"></i></span>
+              <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-zinc-400" x-text="t('card_location')">Location</p>
+              <p class="mt-1 font-semibold text-zinc-900 dark:text-white" x-text="t('card_location_v')"></p>
+            </div>
+            <div class="reveal d2 card-lift rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-5 t">
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-violet-500/10 text-violet-500"><i class="fa-solid fa-handshake"></i></span>
+              <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-zinc-400" x-text="t('card_open')">Open to</p>
+              <p class="mt-1 font-semibold text-zinc-900 dark:text-white" x-text="t('card_open_v')"></p>
+            </div>
+            <div class="reveal d3 card-lift rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-5 t">
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-emerald-500/10 text-emerald-500"><i class="fa-solid fa-graduation-cap"></i></span>
+              <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-zinc-400" x-text="t('card_edu')">Education</p>
+              <p class="mt-1 font-semibold text-zinc-900 dark:text-white" x-text="t('card_edu_v')"></p>
+            </div>
+
+            <!-- Code card -->
+            <div class="reveal sm:col-span-2 rounded-2xl border border-zinc-200 dark:border-white/10 bg-zinc-900 dark:bg-zinc-900/80 p-5 shadow-xl shadow-black/10 ltr" dir="ltr">
+              <div class="flex items-center gap-1.5 mb-4">
+                <span class="h-3 w-3 rounded-full bg-red-500/80"></span><span class="h-3 w-3 rounded-full bg-amber-400/80"></span><span class="h-3 w-3 rounded-full bg-emerald-500/80"></span>
+                <span class="ms-3 text-xs text-zinc-500 code-font">munib.js</span>
+              </div>
+              <pre class="code-font text-sm leading-7 text-zinc-300 overflow-x-auto"><code><span class="text-violet-400">const</span> <span class="text-cyan-300">munib</span> <span class="text-zinc-500">=</span> <span class="text-zinc-400">{</span>
+  <span class="text-indigo-300">code</span><span class="text-zinc-500">:</span> <span class="text-zinc-400">[</span><span class="text-emerald-300">'C'</span><span class="text-zinc-500">,</span> <span class="text-emerald-300">'JavaScript'</span><span class="text-zinc-400">]</span><span class="text-zinc-500">,</span>
+  <span class="text-indigo-300">design</span><span class="text-zinc-500">:</span> <span class="text-emerald-300">'UI/UX'</span><span class="text-zinc-500">,</span>
+  <span class="text-indigo-300">ships</span><span class="text-zinc-500">:</span> <span class="text-amber-300">true</span>
+<span class="text-zinc-400">}</span><span class="text-zinc-500">;</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section id="skills" class="relative py-24">
+      <div class="orb orb-cyan w-[30rem] h-[30rem] -start-56 top-10" aria-hidden="true"></div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-500" x-text="t('skills_kicker')">Tech Stack</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white" x-text="t('skills_heading')">Skills & tools I work with</h2>
+          <p class="mt-3 text-zinc-600 dark:text-zinc-400" x-text="t('skills_sub')"></p>
+        </div>
+
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <template x-for="(c, i) in skillCats" :key="c.k">
+            <div class="reveal card-lift rounded-3xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 t" :class="'d' + (i % 3)">
+              <div class="flex items-center gap-3">
+                <span class="grid h-11 w-11 place-items-center rounded-2xl text-white shadow-lg" :class="c.grad"><i class="fa-solid" :class="c.icon"></i></span>
+                <h3 class="text-lg font-bold text-zinc-900 dark:text-white" x-text="t(c.k)"></h3>
+              </div>
+              <ul class="mt-5 flex flex-wrap gap-2">
+                <template x-for="s in c.items" :key="s.n">
+                  <li class="inline-flex items-center gap-1.5 rounded-lg border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-zinc-900/60 px-3 py-1.5 text-sm font-medium text-zinc-700 dark:text-zinc-200 ltr" dir="ltr">
+                    <span x-text="s.n"></span>
+                    <span x-show="s.l" class="text-[10px] font-semibold uppercase tracking-wider text-indigo-500" x-text="t('learning')"></span>
+                  </li>
+                </template>
+              </ul>
+            </div>
+          </template>
+        </div>
+
+        <!-- GitHub languages strip -->
+        <div class="reveal mt-10 rounded-3xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 t">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h3 class="text-base font-bold text-zinc-900 dark:text-white flex items-center gap-2"><i class="fa-brands fa-github"></i><span x-text="t('gh_langs')">Languages detected from GitHub</span></h3>
+              <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400" x-text="t('gh_langs_sub')"></p>
+            </div>
+            <span class="text-xs font-semibold text-emerald-500 flex items-center gap-1.5" x-show="!gh.loading && !gh.error"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>LIVE</span>
+          </div>
+          <div class="mt-5 flex flex-wrap gap-2.5">
+            <template x-if="gh.loading">
+              <div class="flex flex-wrap gap-2.5">
+                <span class="h-8 w-24 rounded-full bg-zinc-200 dark:bg-white/10 animate-pulse"></span>
+                <span class="h-8 w-20 rounded-full bg-zinc-200 dark:bg-white/10 animate-pulse"></span>
+                <span class="h-8 w-28 rounded-full bg-zinc-200 dark:bg-white/10 animate-pulse"></span>
+                <span class="h-8 w-16 rounded-full bg-zinc-200 dark:bg-white/10 animate-pulse"></span>
+              </div>
+            </template>
+            <template x-if="!gh.loading && gh.langs.length === 0">
+              <p class="text-sm text-zinc-500" x-text="t('gh_langs_empty')"></p>
+            </template>
+            <template x-for="lg in gh.langs" :key="lg.name">
+              <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-zinc-900/60 px-3.5 py-1.5 text-sm font-medium ltr" dir="ltr">
+                <span class="h-3 w-3 rounded-full ring-2 ring-white/20" :style="'background:' + lg.color"></span>
+                <span x-text="lg.name"></span>
+                <span class="text-xs text-zinc-400" x-text="n(lg.count)"></span>
+              </span>
+            </template>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects" class="relative py-24">
+      <div class="orb orb-indigo w-[34rem] h-[34rem] -end-60 top-1/4" aria-hidden="true"></div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-500" x-text="t('proj_kicker')">Portfolio</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white" x-text="t('proj_heading')">Featured Projects</h2>
+          <p class="mt-3 text-zinc-600 dark:text-zinc-400" x-text="t('proj_sub')"></p>
+        </div>
+
+        <!-- Featured (from portfolio) -->
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <template x-for="(p, i) in featured" :key="p.k">
+            <article class="reveal card-lift group flex flex-col rounded-3xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 overflow-hidden t" :class="'d' + (i % 3)">
+              <div class="relative h-36 bg-gradient-to-br p-5 flex items-end" :class="p.grad">
+                <div class="absolute inset-0 grid-bg opacity-60"></div>
+                <i class="fa-solid absolute top-5 end-5 text-4xl text-white/80" :class="p.icon"></i>
+                <div class="relative flex items-center gap-2">
+                  <span class="rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white" x-text="t(p.cat)"></span>
+                  <span class="rounded-full bg-black/20 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white" x-text="t('proj_featured')"></span>
+                </div>
+              </div>
+              <div class="flex flex-col flex-1 p-5">
+                <h3 class="text-lg font-bold text-zinc-900 dark:text-white group-hover:text-indigo-500 transition-colors" x-text="t(p.k + '_t')"></h3>
+                <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400" x-text="t(p.k + '_d')"></p>
+                <ul class="mt-4 mb-5 flex flex-wrap gap-1.5">
+                  <template x-for="tag in p.tags" :key="tag">
+                    <li class="rounded-md bg-zinc-100 dark:bg-zinc-800/80 px-2 py-0.5 text-[11px] font-semibold text-zinc-600 dark:text-zinc-300 ltr" dir="ltr" x-text="tag"></li>
+                  </template>
+                </ul>
+                <div class="mt-auto pt-5 flex items-center justify-between gap-3 border-t border-zinc-100 dark:border-white/5">
+                  <span class="text-xs text-zinc-500 flex items-center gap-1.5">
+                    <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                    <span x-text="t('status_completed')"></span>
+                    <span x-show="p.date" x-text="p.date ? '· ' + d(p.date) : ''"></span>
+                  </span>
+                  <span class="flex items-center gap-2">
+                    <a x-show="p.live" :href="p.live" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-lg grad-bg px-3 py-1.5 text-xs font-semibold text-white shadow-md shadow-indigo-500/20">
+                      <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i><span x-text="t('live')"></span>
+                    </a>
+                    <a x-show="p.code" :href="p.code" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-lg border border-zinc-200 dark:border-white/10 px-3 py-1.5 text-xs font-semibold text-zinc-700 dark:text-zinc-200 hover:border-indigo-400/60 transition-colors">
+                      <i class="fa-brands fa-github"></i><span x-text="t('code')"></span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </article>
+          </template>
+        </div>
+
+        <!-- Live from GitHub -->
+        <div class="mt-16 reveal flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h3 class="text-2xl font-extrabold tracking-tight text-zinc-900 dark:text-white flex items-center gap-3">
+              <i class="fa-brands fa-github"></i><span x-text="t('proj_gh')">Live from GitHub</span>
+            </h3>
+            <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400" x-text="t('proj_gh_sub')"></p>
+          </div>
+          <a href="https://github.com/AsadullahAlMunib?tab=repositories" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-500 hover:text-indigo-400 transition-colors">
+            <span x-text="t('view_all')">View all on GitHub</span><i class="fa-solid fa-arrow-right text-xs rtl:rotate-180"></i>
+          </a>
+        </div>
+
+        <!-- Skeletons -->
+        <div x-show="gh.loading" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5" aria-busy="true" :aria-label="t('loading')">
+          <template x-for="k in [1,2,3,4,5,6]" :key="'sk' + k">
+            <div class="rounded-3xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 animate-pulse">
+              <div class="flex items-center gap-3"><span class="h-9 w-9 rounded-xl bg-zinc-200 dark:bg-white/10"></span><span class="h-4 w-32 rounded bg-zinc-200 dark:bg-white/10"></span></div>
+              <div class="mt-5 space-y-2"><span class="block h-3 w-full rounded bg-zinc-200 dark:bg-white/10"></span><span class="block h-3 w-4/5 rounded bg-zinc-200 dark:bg-white/10"></span></div>
+              <div class="mt-5 flex gap-2"><span class="h-5 w-14 rounded bg-zinc-200 dark:bg-white/10"></span><span class="h-5 w-16 rounded bg-zinc-200 dark:bg-white/10"></span></div>
+              <div class="mt-6 h-3 w-1/2 rounded bg-zinc-200 dark:bg-white/10"></div>
+            </div>
+          </template>
+        </div>
+
+        <!-- Error -->
+        <div x-cloak x-show="!gh.loading && gh.error" class="mt-8 rounded-3xl border border-amber-500/30 bg-amber-500/10 p-8 text-center">
+          <i class="fa-solid fa-plug-circle-xmark text-3xl text-amber-500"></i>
+          <p class="mt-3 font-semibold text-zinc-800 dark:text-zinc-100" x-text="t('gh_error')"></p>
+          <a :href="cfg.social.github" target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-indigo-500 hover:text-indigo-400"><i class="fa-brands fa-github"></i><span x-text="t('gh_error_link')"></span></a>
+        </div>
+
+        <!-- Empty -->
+        <div x-cloak x-show="!gh.loading && !gh.error && gh.repos.length === 0" class="mt-8 rounded-3xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-8 text-center text-zinc-500">
+          <i class="fa-regular fa-folder-open text-3xl"></i>
+          <p class="mt-3" x-text="t('gh_empty')"></p>
+        </div>
+
+        <!-- Repo cards -->
+        <div x-cloak x-show="!gh.loading && !gh.error && gh.repos.length > 0" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <template x-for="r in gh.repos" :key="r.id">
+            <article class="reveal card-lift group flex flex-col rounded-3xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 t">
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-center gap-3 min-w-0">
+                  <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300"><i class="fa-regular fa-folder"></i></span>
+                  <h4 class="truncate font-bold text-zinc-900 dark:text-white group-hover:text-indigo-500 transition-colors ltr" dir="ltr" x-text="pretty(r.name)"></h4>
+                </div>
+                <a :href="r.html_url" target="_blank" rel="noopener" class="shrink-0 text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :aria-label="'GitHub: ' + r.name"><i class="fa-brands fa-github text-lg"></i></a>
+              </div>
+              <p class="mt-4 text-sm leading-relaxed line-clamp-3" :class="r.description ? 'text-zinc-600 dark:text-zinc-400' : 'text-zinc-400 italic'" x-text="r.description || t('no_desc')"></p>
+              <ul class="mt-4 flex flex-wrap gap-1.5" x-show="r.topics && r.topics.length">
+                <template x-for="tp in (r.topics || []).slice(0, 4)" :key="tp">
+                  <li class="rounded-full bg-indigo-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-indigo-600 dark:text-indigo-400 ltr" dir="ltr" x-text="tp"></li>
+                </template>
+              </ul>
+              <div class="mt-auto pt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-zinc-500 dark:text-zinc-400">
+                <span x-show="r.language" class="inline-flex items-center gap-1.5 ltr" dir="ltr"><span class="h-2.5 w-2.5 rounded-full" :style="'background:' + langColor(r.language)"></span><span x-text="r.language"></span></span>
+                <span class="inline-flex items-center gap-1.5"><i class="fa-regular fa-star"></i><span x-text="n(r.stargazers_count)"></span></span>
+                <span class="inline-flex items-center gap-1.5"><i class="fa-regular fa-clock"></i><span x-text="t('updated') + ' ' + d(r.pushed_at)"></span></span>
+                <a x-show="liveUrl(r)" :href="liveUrl(r)" target="_blank" rel="noopener" class="ms-auto inline-flex items-center gap-1.5 font-semibold text-indigo-500 hover:text-indigo-400"><i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i><span x-text="t('live')"></span></a>
+              </div>
+            </article>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= JOURNEY ================= -->
+    <section id="journey" class="relative py-24">
+      <div class="orb orb-violet w-[30rem] h-[30rem] -start-60 bottom-0" aria-hidden="true"></div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-500" x-text="t('journey_kicker')">Journey</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white" x-text="t('journey_heading')">Milestones so far</h2>
+          <p class="mt-3 text-zinc-600 dark:text-zinc-400" x-text="t('journey_sub')"></p>
+        </div>
+
+        <ol class="relative mt-12 tl-line max-w-3xl space-y-8">
+          <template x-for="(m, i) in timeline" :key="m.k">
+            <li class="reveal relative ps-14">
+              <span class="absolute start-0 top-1 grid h-9 w-9 place-items-center rounded-full text-white shadow-lg ring-4 ring-zinc-50 dark:ring-zinc-950 t" :class="m.grad"><i class="fa-solid text-sm" :class="m.icon"></i></span>
+              <div class="card-lift rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-5 t">
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="text-lg font-bold text-zinc-900 dark:text-white" x-text="t(m.k + '_t')"></h3>
+                  <span x-show="m.since" class="rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-bold text-emerald-600 dark:text-emerald-400" x-text="t('since_badge') + ' ' + n(sinceYear, {useGrouping:false})"></span>
+                </div>
+                <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-indigo-500" x-text="t(m.k + '_date')"></p>
+                <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400" x-text="t(m.k + '_d')"></p>
+              </div>
+            </li>
+          </template>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="relative py-24">
+      <div class="orb orb-cyan w-[30rem] h-[30rem] -end-56 top-10" aria-hidden="true"></div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-500" x-text="t('contact_kicker')">Contact</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white" x-text="t('contact_heading')">Let's build something together</h2>
+          <p class="mt-3 text-zinc-600 dark:text-zinc-400" x-text="t('contact_sub')"></p>
+        </div>
+
+        <div class="mt-12 grid lg:grid-cols-12 gap-8">
+          <!-- Form -->
+          <form class="reveal lg:col-span-7 rounded-3xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 sm:p-8 t" @submit.prevent="submit()" novalidate>
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="f-name" class="block text-sm font-semibold text-zinc-700 dark:text-zinc-200" x-text="t('f_name')">Name</label>
+                <input id="f-name" type="text" x-model="form.name" :placeholder="t('ph_name')" autocomplete="name" class="mt-2 w-full rounded-xl border bg-zinc-50 dark:bg-zinc-900/60 px-4 py-3 text-sm outline-none transition-colors focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20" :class="errors.name ? 'border-red-500' : 'border-zinc-200 dark:border-white/10'">
+                <p x-cloak x-show="errors.name" class="mt-1.5 text-xs text-red-500" x-text="errors.name"></p>
+              </div>
+              <div>
+                <label for="f-email" class="block text-sm font-semibold text-zinc-700 dark:text-zinc-200" x-text="t('f_email')">Email</label>
+                <input id="f-email" type="email" x-model="form.email" :placeholder="t('ph_email')" autocomplete="email" dir="ltr" class="mt-2 w-full rounded-xl border bg-zinc-50 dark:bg-zinc-900/60 px-4 py-3 text-sm outline-none transition-colors focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 text-start" :class="errors.email ? 'border-red-500' : 'border-zinc-200 dark:border-white/10'">
+                <p x-cloak x-show="errors.email" class="mt-1.5 text-xs text-red-500" x-text="errors.email"></p>
+              </div>
+            </div>
+            <div class="mt-5">
+              <label for="f-msg" class="block text-sm font-semibold text-zinc-700 dark:text-zinc-200" x-text="t('f_msg')">Message</label>
+              <textarea id="f-msg" rows="5" x-model="form.message" :placeholder="t('ph_msg')" class="mt-2 w-full rounded-xl border bg-zinc-50 dark:bg-zinc-900/60 px-4 py-3 text-sm outline-none transition-colors focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 resize-y" :class="errors.message ? 'border-red-500' : 'border-zinc-200 dark:border-white/10'"></textarea>
+              <p x-cloak x-show="errors.message" class="mt-1.5 text-xs text-red-500" x-text="errors.message"></p>
+            </div>
+            <div class="mt-6 flex flex-wrap items-center justify-between gap-4">
+              <p class="text-xs text-zinc-500 flex items-center gap-2"><i class="fa-regular fa-clock text-indigo-500"></i><span x-text="t('replies')">Usually replies within a day.</span></p>
+              <button type="submit" class="inline-flex items-center gap-2 rounded-xl grad-bg px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition-transform hover:-translate-y-0.5">
+                <i class="fa-solid fa-paper-plane rtl:-scale-x-100"></i><span x-text="t('send')">Send Message</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Socials -->
+          <div class="reveal d1 lg:col-span-5 rounded-3xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 sm:p-8 t">
+            <h3 class="text-lg font-bold text-zinc-900 dark:text-white" x-text="t('socials_h')">Find me online</h3>
+            <ul class="mt-5 space-y-2.5">
+              <template x-for="s in socials" :key="s.k">
+                <li>
+                  <a :href="s.href" :target="s.href.startsWith('mailto') ? null : '_blank'" rel="noopener" class="group flex items-center gap-4 rounded-2xl border border-transparent p-2.5 transition-colors hover:border-zinc-200 dark:hover:border-white/10 hover:bg-zinc-50 dark:hover:bg-white/5">
+                    <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl text-white shadow-md ring-1 ring-white/10 transition-transform group-hover:scale-105" :style="'background:' + s.color"><i :class="s.icon"></i></span>
+                    <span class="min-w-0">
+                      <span class="block text-xs font-semibold uppercase tracking-wider text-zinc-400" x-text="t(s.k)"></span>
+                      <span class="block truncate text-sm font-semibold text-zinc-800 dark:text-zinc-100 ltr text-start" dir="ltr" x-text="s.handle"></span>
+                    </span>
+                    <i class="fa-solid fa-arrow-up-right-from-square ms-auto text-xs text-zinc-300 group-hover:text-indigo-500 transition-colors rtl:-scale-x-100"></i>
+                  </a>
+                </li>
+              </template>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="relative border-t border-zinc-200 dark:border-white/10 py-14 t">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-5">
+          <a href="#home" class="flex items-center gap-2.5">
+            <span class="grid h-9 w-9 place-items-center rounded-xl grad-bg text-white font-extrabold text-lg">M</span>
+            <span class="text-lg font-bold text-zinc-900 dark:text-white ltr" dir="ltr">Munib<span class="grad-text">.</span></span>
+          </a>
+          <p class="mt-4 max-w-sm text-sm leading-relaxed text-zinc-600 dark:text-zinc-400" x-text="t('foot_bio')"></p>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <template x-for="s in socials.filter(x => !x.href.startsWith('mailto'))" :key="'f' + s.k">
+              <a :href="s.href" target="_blank" rel="noopener" :aria-label="t(s.k)" class="grid h-9 w-9 place-items-center rounded-lg border border-zinc-200 dark:border-white/10 text-zinc-500 dark:text-zinc-400 transition-colors hover:text-white" :style="'--c:' + s.color" onmouseenter="this.style.background=this.style.getPropertyValue('--c');this.style.borderColor=this.style.getPropertyValue('--c')" onmouseleave="this.style.background='';this.style.borderColor=''"><i :class="s.icon"></i></a>
+            </template>
+            <a :href="'mailto:' + cfg.email" :aria-label="t('s_email')" class="grid h-9 w-9 place-items-center rounded-lg border border-zinc-200 dark:border-white/10 text-zinc-500 dark:text-zinc-400 transition-colors hover:text-white hover:bg-[#EA4335] hover:border-[#EA4335]"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="md:col-span-3">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white" x-text="t('foot_links')">Quick links</h4>
+          <ul class="mt-4 space-y-2.5">
+            <template x-for="l in nav" :key="'f' + l.id">
+              <li><a :href="'#' + l.id" class="text-sm text-zinc-600 dark:text-zinc-400 hover:text-indigo-500 transition-colors" x-text="t(l.k)"></a></li>
+            </template>
+          </ul>
+        </div>
+        <div class="md:col-span-4">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white" x-text="t('foot_built')">Built with</h4>
+          <ul class="mt-4 space-y-2.5 text-sm text-zinc-600 dark:text-zinc-400">
+            <li class="flex items-center gap-2.5"><i class="fa-solid fa-wind text-cyan-500 w-4"></i><span class="ltr" dir="ltr">Tailwind CSS</span></li>
+            <li class="flex items-center gap-2.5"><i class="fa-solid fa-mountain text-indigo-500 w-4"></i><span class="ltr" dir="ltr">Alpine.js</span></li>
+            <li class="flex items-center gap-2.5"><i class="fa-brands fa-github w-4"></i><span class="ltr" dir="ltr">GitHub REST API</span></li>
+            <li class="flex items-center gap-2.5"><i class="fa-solid fa-bolt text-amber-500 w-4"></i><span x-text="t('zero_build')">Zero build step</span></li>
+          </ul>
+          <a :href="cfg.site" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-indigo-500 hover:text-indigo-400"><i class="fa-solid fa-globe"></i><span class="ltr" dir="ltr">munib.rf.gd</span></a>
+        </div>
+      </div>
+      <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-zinc-200 dark:border-white/10 pt-6 text-xs text-zinc-500">
+        <p>© <span x-text="n(year, {useGrouping:false})">2025</span> <span x-text="t('name')">Md Asadullah Al Munib</span>. <span x-text="t('rights')">All rights reserved.</span></p>
+        <p class="flex items-center gap-1.5"><span x-text="t('crafted')">Crafted with Tailwind CSS & Alpine.js</span> <i class="fa-solid fa-heart text-rose-500"></i></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button x-cloak x-show="showTop" x-transition.opacity.duration.300ms type="button" @click="window.scrollTo({top:0, behavior:'smooth'})" :aria-label="t('back_top')" class="fixed bottom-6 end-6 z-40 grid h-11 w-11 place-items-center rounded-xl grad-bg text-white shadow-lg shadow-indigo-500/30 transition-transform hover:-translate-y-1">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Toast -->
+  <div x-cloak x-show="toast.show" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-4" role="status" aria-live="polite" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 rounded-2xl border px-4 py-3 shadow-2xl shadow-black/20 max-w-[92vw] sm:max-w-md" :class="toast.ok ? 'border-emerald-500/30 bg-white dark:bg-zinc-900' : 'border-red-500/30 bg-white dark:bg-zinc-900'">
+    <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full" :class="toast.ok ? 'bg-emerald-500/15 text-emerald-500' : 'bg-red-500/15 text-red-500'"><i class="fa-solid" :class="toast.ok ? 'fa-check' : 'fa-triangle-exclamation'"></i></span>
+    <p class="text-sm font-medium text-zinc-800 dark:text-zinc-100" x-text="toast.msg"></p>
+  </div>
+
+  <script>
+    /* =========================================================
+       CONFIG — edit these values to update the site
+       ========================================================= */
+    const CONFIG = {
+      name: 'Md Asadullah Al Munib',
+      githubUser: 'AsadullahAlMunib',
+      githubId: 163411448,
+      email: 'asadullahweb1@gmail.com',
+      site: 'https://munib.rf.gd/',
+      siteMirror: 'https://asadullahalmunib.github.io/Portfolio/',
+      social: {
+        github:    'https://github.com/AsadullahAlMunib/',
+        facebook:  'https://facebook.com/MdAsadullahAlMunib/',
+        facebook2: 'https://facebook.com/AsadullahAlMunib/',
+        linkedin:  'https://linkedin.com/in/AsadullahAlMunib/',
+        instagram: 'https://instagram.com/AsadullahAlMunib/',
+        x:         'https://x.com/Asadullah_Munib/'
+      },
+      excludeLangs: ['dart', 'kotlin', 'swift', 'gdscript', 'objective-c'],
+      excludeWords: ['flutter', 'dart', 'android', 'ios app', 'mobile', 'game', 'unity', 'godot', 'react native']
+    };
+
+    const LOCALES = { en: 'en-US', bn: 'bn-BD', ar: 'ar-EG' };
+    const CACHE_KEY = 'munib_gh_cache_v1';
+    const CACHE_TTL = 60 * 60 * 1000; // 1 hour
+
+    /* ---------- Navigation ---------- */
+    const NAV = [
+      { id: 'home', k: 'nav_home' },
+      { id: 'about', k: 'nav_about' },
+      { id: 'skills', k: 'nav_skills' },
+      { id: 'projects', k: 'nav_projects' },
+      { id: 'journey', k: 'nav_journey' },
+      { id: 'contact', k: 'nav_contact' }
+    ];
+
+    /* ---------- Skills (confirmed from portfolio + GitHub) ---------- */
+    const SKILLS = [
+      { k: 'cat_lang', icon: 'fa-code', grad: 'bg-gradient-to-br from-indigo-500 to-violet-500',
+        items: [{ n: 'C' }, { n: 'JavaScript (ES6+)' }, { n: 'PHP' }, { n: 'HTML5' }, { n: 'CSS3' }, { n: 'C++ (Arduino)' }] },
+      { k: 'cat_front', icon: 'fa-laptop-code', grad: 'bg-gradient-to-br from-cyan-500 to-sky-600',
+        items: [{ n: 'Responsive Design' }, { n: 'Bootstrap' }, { n: 'Tailwind CSS' }, { n: 'Git & GitHub' }, { n: 'GitHub Pages' }, { n: 'REST API Integration' }, { n: 'Web Performance' }] },
+      { k: 'cat_design', icon: 'fa-pen-ruler', grad: 'bg-gradient-to-br from-pink-500 to-rose-500',
+        items: [{ n: 'UI/UX Design' }, { n: 'Web Design' }, { n: 'Wireframing & Prototyping' }, { n: 'Typography & Color' }, { n: 'Accessibility' }] },
+      { k: 'cat_back', icon: 'fa-database', grad: 'bg-gradient-to-br from-emerald-500 to-teal-600',
+        items: [{ n: 'PHP' }, { n: 'MySQL' }, { n: 'Laravel', l: true }] },
+      { k: 'cat_hw', icon: 'fa-microchip', grad: 'bg-gradient-to-br from-amber-500 to-orange-600',
+        items: [{ n: 'Arduino' }, { n: 'Robotics' }, { n: 'DIY Electronics' }] },
+      { k: 'cat_other', icon: 'fa-feather-pointed', grad: 'bg-gradient-to-br from-violet-500 to-fuchsia-600',
+        items: [{ n: 'Technical Writing' }, { n: 'Problem Solving' }, { n: 'Competitive Programming' }] }
+    ];
+
+    /* ---------- Featured projects (from portfolio + GitHub README) ---------- */
+    const GH = 'https://github.com/AsadullahAlMunib/';
+    const PAGES = 'https://asadullahalmunib.github.io/';
+    const FEATURED = [
+      { k: 'fp1', repo: 'Portfolio', cat: 'pc_web', icon: 'fa-window-maximize', grad: 'from-indigo-500 to-cyan-500', date: '2025-10-05',
+        tags: ['HTML', 'Bootstrap', 'JavaScript', 'CSS'], live: PAGES + 'Portfolio/', code: GH + 'Portfolio' },
+      { k: 'fp2', repo: 'TTAS', cat: 'pc_js', icon: 'fa-keyboard', grad: 'from-amber-400 to-orange-500', date: '2025-09-10',
+        tags: ['JavaScript', 'Library', 'v1.3.1'], live: PAGES + 'TTAS/', code: GH + 'TTAS' },
+      { k: 'fp3', repo: null, cat: 'pc_tool', icon: 'fa-qrcode', grad: 'from-emerald-500 to-teal-600', date: '2025-07-24',
+        tags: ['JavaScript', 'QRserver API', 'Fetch'], live: PAGES + 'Portfolio/projects/QRcodeGenerator/', code: GH + 'Portfolio/tree/main/projects/QRcodeGenerator' },
+      { k: 'fp4', repo: null, cat: 'pc_design', icon: 'fa-right-to-bracket', grad: 'from-pink-500 to-violet-600', date: '2025-08-11',
+        tags: ['HTML', 'CSS', 'JavaScript', '5 Themes'], live: PAGES + 'Portfolio/projects/LoginRegister/', code: GH + 'Portfolio/tree/main/projects/LoginRegister' },
+      { k: 'fp5', repo: 'Multifunctional_Calculator', cat: 'pc_c', icon: 'fa-calculator', grad: 'from-sky-600 to-indigo-600', date: null,
+        tags: ['C', 'CLI', 'Math'], live: null, code: GH + 'Multifunctional_Calculator' },
+      { k: 'fp6', repo: 'Ultrasonic_Radar', cat: 'pc_hw', icon: 'fa-satellite-dish', grad: 'from-zinc-600 to-zinc-800', date: null,
+        tags: ['Arduino', 'C++', 'Sensors'], live: null, code: GH + 'Ultrasonic_Radar' }
+    ];
+
+    /* ---------- Timeline ---------- */
+    const TIMELINE = [
+      { k: 'j1', icon: 'fa-code-branch', grad: 'bg-gradient-to-br from-zinc-700 to-zinc-900', since: true },
+      { k: 'j2', icon: 'fa-trophy', grad: 'bg-gradient-to-br from-amber-500 to-orange-600' },
+      { k: 'j3', icon: 'fa-graduation-cap', grad: 'bg-gradient-to-br from-emerald-500 to-teal-600' },
+      { k: 'j4', icon: 'fa-laptop-code', grad: 'bg-gradient-to-br from-cyan-500 to-sky-600' },
+      { k: 'j5', icon: 'fa-rocket', grad: 'bg-gradient-to-br from-indigo-500 to-violet-600' },
+      { k: 'j6', icon: 'fa-book-open', grad: 'bg-gradient-to-br from-pink-500 to-rose-600' }
+    ];
+
+    /* ---------- Socials ---------- */
+    const SOCIALS = [
+      { k: 's_email',  icon: 'fa-solid fa-envelope',     handle: CONFIG.email,            href: 'mailto:' + CONFIG.email,  color: '#EA4335' },
+      { k: 's_site',   icon: 'fa-solid fa-globe',        handle: 'munib.rf.gd',           href: CONFIG.site,               color: '#0891b2' },
+      { k: 's_github', icon: 'fa-brands fa-github',      handle: '@AsadullahAlMunib',     href: CONFIG.social.github,      color: '#24292f' },
+      { k: 's_fb',     icon: 'fa-brands fa-facebook-f',  handle: 'MdAsadullahAlMunib',    href: CONFIG.social.facebook,    color: '#1877F2' },
+      { k: 's_fb2',    icon: 'fa-brands fa-facebook-f',  handle: 'AsadullahAlMunib',      href: CONFIG.social.facebook2,   color: '#0e5fcc' },
+      { k: 's_li',     icon: 'fa-brands fa-linkedin-in', handle: 'in/AsadullahAlMunib',   href: CONFIG.social.linkedin,    color: '#0A66C2' },
+      { k: 's_ig',     icon: 'fa-brands fa-instagram',   handle: '@AsadullahAlMunib',     href: CONFIG.social.instagram,   color: '#E4405F' },
+      { k: 's_x',      icon: 'fa-brands fa-x-twitter',   handle: '@Asadullah_Munib',      href: CONFIG.social.x,           color: '#0f1419' }
+    ];
+
+    /* ---------- GitHub language colours ---------- */
+    const LANG_COLORS = {
+      'JavaScript': '#f1e05a', 'TypeScript': '#3178c6', 'HTML': '#e34c26', 'CSS': '#663399', 'SCSS': '#c6538c',
+      'C': '#555555', 'C++': '#f34b7d', 'PHP': '#4F5D95', 'Python': '#3572A5', 'Java': '#b07219', 'Shell': '#89e051',
+      'Blade': '#f7523f', 'Arduino': '#bd79d1', 'Jupyter Notebook': '#DA5B0B', 'Vue': '#41b883', 'Markdown': '#083fa1',
+      'Hack': '#878787', 'Dockerfile': '#384d54', 'Go': '#00ADD8', 'Rust': '#dea584'
+    };
+
+    /* =========================================================
+       I18N — every visible string in en / bn / ar
+       ========================================================= */
+    const I18N = {
+      en: {
+        doc_title: 'Md Asadullah Al Munib — Student & Aspiring Web Developer',
+        name: 'Md Asadullah Al Munib',
+        nav_home: 'Home', nav_about: 'About', nav_skills: 'Skills', nav_projects: 'Projects', nav_journey: 'Journey', nav_contact: 'Contact',
+        theme_toggle: 'Toggle theme', lang_label: 'Language', menu: 'Menu',
+        available: 'Open to opportunities',
+        greeting: "Hi, I'm",
+        title: 'Student & Aspiring Web Developer',
+        tagline: 'I build responsive websites and small web tools with HTML, CSS, JavaScript, PHP & Laravel — and I write about science and technology along the way.',
+        cta_projects: 'View Projects', cta_contact: 'Get in Touch', cta_github: 'GitHub',
+        stat_repos: 'Public repos', stat_followers: 'Followers', stat_since: 'On GitHub since',
+        scroll: 'Scroll',
+        about_kicker: 'About Me', about_heading: 'A student who loves to build',
+        about_p1: "I'm Md Asadullah Al Munib from Rangpur, Bangladesh — a student with a deep interest in technology and creativity. I grew up curious about how things work, which led me to explore coding, robotics and DIY projects alongside my studies.",
+        about_p2: "I'm currently in the Alim‑2027 (HSC‑27) batch at Dhap Satgara B. M. Model Kamil Madrasah, Rangpur, where I also passed my Dakhil (SSC) examination in 2025.",
+        about_p3: "Right now I'm learning and practising web design & development — HTML, CSS, JavaScript, PHP, MySQL and Laravel — and sharing my work openly on GitHub. Combining academic study with self-learning is what drives real growth for me.",
+        about_p4: 'Outside of code, I write short articles on science and technology and enjoy hands-on projects that blend creativity with problem-solving. Learning never stops — my goal is to keep improving, build meaningful projects and inspire others through innovation.',
+        card_focus: 'Core focus', card_focus_v: 'Front-end web development & UI/UX',
+        card_location: 'Location', card_location_v: 'Rangpur, Bangladesh · Remote-friendly',
+        card_open: 'Open to', card_open_v: 'Freelance, internships & collaboration',
+        card_edu: 'Education', card_edu_v: 'Alim (HSC) 2027 · Dakhil (SSC) 2025',
+        honors_kicker: 'Recognition',
+        honor1: '2nd place — Regional Programming Contest 2024 (BCC Rangpur)',
+        honor2: '8th place — National Innovation Fair 2024 (Bangladesh Madrasah Education Board)',
+        skills_kicker: 'Tech Stack', skills_heading: 'Skills & tools I work with',
+        skills_sub: 'Confirmed from my portfolio and GitHub — honest, no fluff.',
+        cat_lang: 'Programming Languages', cat_front: 'Front-End & Tools', cat_back: 'Back-End & Data', cat_design: 'Design & UX', cat_hw: 'Hardware & Robotics', cat_other: 'Writing & Problem Solving',
+        learning: 'learning',
+        gh_langs: 'Languages detected from GitHub', gh_langs_sub: 'Computed live from my public repositories.', gh_langs_empty: 'No language data yet.',
+        proj_kicker: 'Portfolio', proj_heading: 'Featured Projects', proj_sub: "Things I've designed, built and shipped.",
+        proj_featured: 'Featured', proj_gh: 'Live from GitHub', proj_gh_sub: 'Pulled from my latest public repositories.',
+        live: 'Live', code: 'Code', no_desc: 'No description added yet.', updated: 'Updated', view_all: 'View all on GitHub',
+        loading: 'Loading repositories…', gh_error: "Couldn't reach GitHub right now.", gh_error_link: 'Browse my repositories on GitHub instead', gh_empty: 'No public repositories to show yet.',
+        status_completed: 'Completed',
+        pc_web: 'Web', pc_js: 'JavaScript', pc_tool: 'Tool', pc_design: 'Design', pc_c: 'C Language', pc_hw: 'Hardware',
+        fp1_t: 'Responsive Portfolio', fp1_d: 'A fully responsive personal portfolio built with Bootstrap and pure JavaScript, with writings, projects and statistics sections.',
+        fp2_t: 'TTAS Animation', fp2_d: 'Text Typing Animation Screen — a lightweight JavaScript library with a simple installation flow (v1.3.1).',
+        fp3_t: 'QR Code Generator', fp3_d: 'A QR code generator tool built with external API integration (QRserver).',
+        fp4_t: 'Login & Register', fp4_d: 'Login and registration page design with five switchable theme colours.',
+        fp5_t: 'Multifunctional Calculator', fp5_d: 'A C-language calculator tool with seven advanced math functions.',
+        fp6_t: 'Ultrasonic Radar', fp6_d: 'A hardware-software hybrid radar built with Arduino and C++.',
+        journey_kicker: 'Journey', journey_heading: 'Milestones so far', journey_sub: 'Drawn from my portfolio and GitHub profile.',
+        since_badge: 'Since',
+        j1_t: 'Joined GitHub', j1_d: 'Started publishing code openly — Arduino sketches, C programs and early web experiments.', j1_date: 'March 2024',
+        j2_t: 'Programming Foundations (C & Arduino)', j2_d: '2nd place at the Regional Programming Contest by BCC Rangpur and 8th at the National Innovation Fair by the Bangladesh Madrasah Education Board.', j2_date: '2024',
+        j3_t: 'Dakhil (SSC) passed', j3_d: 'Completed Dakhil from Dhap Satgara B. M. Model Kamil Madrasah, Rangpur.', j3_date: '2025',
+        j4_t: 'Into Web Development', j4_d: 'Built the QR Code Generator, the Login & Register design and the TTAS Animation library with HTML, CSS and JavaScript.', j4_date: 'July – September 2025',
+        j5_t: 'Personal Portfolio launched', j5_d: 'Designed and shipped my responsive portfolio at munib.rf.gd with Bootstrap and pure JS.', j5_date: 'October 2025',
+        j6_t: 'Alim (HSC) 2027 batch', j6_d: 'Continuing studies while learning PHP, MySQL and Laravel to grow into full-stack web development.', j6_date: 'Present',
+        contact_kicker: 'Contact', contact_heading: "Let's build something together", contact_sub: 'Have a project, an internship or a collaboration in mind? Send a message.',
+        f_name: 'Name', f_email: 'Email', f_msg: 'Message', ph_name: 'Your name', ph_email: 'you@example.com', ph_msg: 'Tell me about your idea…', send: 'Send Message',
+        v_name: 'Please enter your name.', v_email: 'Please enter a valid email address.', v_msg: 'Your message should be at least 10 characters.',
+        toast_ok: 'Opening your email app — thanks for reaching out!', toast_err: 'Please fix the highlighted fields.',
+        replies: 'Usually replies within a day.', socials_h: 'Find me online',
+        s_email: 'Email', s_site: 'Website', s_github: 'GitHub', s_fb: 'Facebook', s_fb2: 'Facebook 2', s_li: 'LinkedIn', s_ig: 'Instagram', s_x: 'X (Twitter)',
+        subj: 'Hello Munib — from {name}',
+        foot_bio: 'Student & aspiring web developer from Rangpur, Bangladesh — building responsive web experiences and writing about science & tech.',
+        foot_links: 'Quick links', foot_built: 'Built with', zero_build: 'Zero build step',
+        crafted: 'Crafted with Tailwind CSS & Alpine.js', rights: 'All rights reserved.', back_top: 'Back to top'
+      },
+
+      bn: {
+        doc_title: 'মো. আসাদুল্লাহ আল মুনিব — শিক্ষার্থী ও উদীয়মান ওয়েব ডেভেলপার',
+        name: 'মো. আসাদুল্লাহ আল মুনিব',
+        nav_home: 'হোম', nav_about: 'আমার সম্পর্কে', nav_skills: 'দক্ষতা', nav_projects: 'প্রজেক্ট', nav_journey: 'যাত্রা', nav_contact: 'যোগাযোগ',
+        theme_toggle: 'থিম পরিবর্তন', lang_label: 'ভাষা', menu: 'মেনু',
+        available: 'কাজের সুযোগের জন্য উন্মুক্ত',
+        greeting: 'আসসালামু আলাইকুম, আমি',
+        title: 'শিক্ষার্থী ও উদীয়মান ওয়েব ডেভেলপার',
+        tagline: 'আমি HTML, CSS, JavaScript, PHP ও Laravel দিয়ে রেসপনসিভ ওয়েবসাইট ও ছোট ওয়েব টুল তৈরি করি — আর পাশাপাশি বিজ্ঞান ও প্রযুক্তি নিয়ে লিখি।',
+        cta_projects: 'প্রজেক্ট দেখুন', cta_contact: 'যোগাযোগ করুন', cta_github: 'GitHub',
+        stat_repos: 'পাবলিক রিপোজিটরি', stat_followers: 'ফলোয়ার', stat_since: 'GitHub-এ আছি',
+        scroll: 'স্ক্রল করুন',
+        about_kicker: 'আমার সম্পর্কে', about_heading: 'একজন শিক্ষার্থী, যে তৈরি করতে ভালোবাসে',
+        about_p1: 'আমি মো. আসাদুল্লাহ আল মুনিব, রংপুর, বাংলাদেশ থেকে — প্রযুক্তি ও সৃজনশীলতায় গভীর আগ্রহী একজন শিক্ষার্থী। জিনিসগুলো কীভাবে কাজ করে তা নিয়ে কৌতূহল নিয়েই বড় হয়েছি, যা আমাকে পড়াশোনার পাশাপাশি কোডিং, রোবোটিক্স ও DIY প্রজেক্টের দিকে নিয়ে গেছে।',
+        about_p2: 'বর্তমানে আমি রংপুরের ধাপ সাতগাড়া বি. এম. মডেল কামিল মাদ্রাসায় আলিম‑২০২৭ (এইচএসসি‑২৭) ব্যাচের শিক্ষার্থী। ২০২৫ সালে একই প্রতিষ্ঠান থেকে দাখিল (এসএসসি) পরীক্ষায় উত্তীর্ণ হয়েছি।',
+        about_p3: 'এখন আমি ওয়েব ডিজাইন ও ডেভেলপমেন্ট শিখছি ও চর্চা করছি — HTML, CSS, JavaScript, PHP, MySQL ও Laravel — এবং আমার কাজ GitHub-এ উন্মুক্তভাবে শেয়ার করছি। একাডেমিক পড়াশোনার সঙ্গে স্ব-শিক্ষার সমন্বয়ই আমার কাছে প্রকৃত অগ্রগতির চাবিকাঠি।',
+        about_p4: 'কোডের বাইরে আমি বিজ্ঞান ও প্রযুক্তি নিয়ে ছোট প্রবন্ধ লিখি এবং সৃজনশীলতা ও সমস্যা সমাধানের মিশেলে হাতে-কলমে প্রজেক্ট করতে ভালোবাসি। শেখা কখনো থামে না — আমার লক্ষ্য ক্রমাগত উন্নতি করা, অর্থবহ প্রজেক্ট তৈরি করা এবং উদ্ভাবনের মাধ্যমে অন্যদের অনুপ্রাণিত করা।',
+        card_focus: 'মূল ফোকাস', card_focus_v: 'ফ্রন্ট-এন্ড ওয়েব ডেভেলপমেন্ট ও UI/UX',
+        card_location: 'অবস্থান', card_location_v: 'রংপুর, বাংলাদেশ · রিমোটে কাজে আগ্রহী',
+        card_open: 'আগ্রহী', card_open_v: 'ফ্রিল্যান্স, ইন্টার্নশিপ ও সহযোগিতা',
+        card_edu: 'শিক্ষা', card_edu_v: 'আলিম (এইচএসসি) ২০২৭ · দাখিল (এসএসসি) ২০২৫',
+        honors_kicker: 'স্বীকৃতি',
+        honor1: '২য় স্থান — আঞ্চলিক প্রোগ্রামিং প্রতিযোগিতা ২০২৪ (BCC রংপুর)',
+        honor2: '৮ম স্থান — জাতীয় উদ্ভাবনী মেলা ২০২৪ (বাংলাদেশ মাদ্রাসা শিক্ষা বোর্ড)',
+        skills_kicker: 'টেক স্ট্যাক', skills_heading: 'যেসব দক্ষতা ও টুল নিয়ে কাজ করি',
+        skills_sub: 'আমার পোর্টফোলিও ও GitHub থেকে যাচাইকৃত — সৎ, বাড়তি কিছু নয়।',
+        cat_lang: 'প্রোগ্রামিং ভাষা', cat_front: 'ফ্রন্ট-এন্ড ও টুলস', cat_back: 'ব্যাক-এন্ড ও ডেটা', cat_design: 'ডিজাইন ও UX', cat_hw: 'হার্ডওয়্যার ও রোবোটিক্স', cat_other: 'লেখালেখি ও সমস্যা সমাধান',
+        learning: 'শিখছি',
+        gh_langs: 'GitHub থেকে শনাক্ত ভাষাসমূহ', gh_langs_sub: 'আমার পাবলিক রিপোজিটরি থেকে লাইভ হিসাব করা।', gh_langs_empty: 'এখনো কোনো ভাষার তথ্য নেই।',
+        proj_kicker: 'পোর্টফোলিও', proj_heading: 'নির্বাচিত প্রজেক্ট', proj_sub: 'যা আমি ডিজাইন করেছি, তৈরি করেছি ও প্রকাশ করেছি।',
+        proj_featured: 'ফিচার্ড', proj_gh: 'GitHub থেকে লাইভ', proj_gh_sub: 'আমার সাম্প্রতিক পাবলিক রিপোজিটরি থেকে আনা।',
+        live: 'লাইভ', code: 'কোড', no_desc: 'এখনো কোনো বিবরণ যোগ করা হয়নি।', updated: 'আপডেট', view_all: 'GitHub-এ সব দেখুন',
+        loading: 'রিপোজিটরি লোড হচ্ছে…', gh_error: 'এই মুহূর্তে GitHub-এ পৌঁছানো যাচ্ছে না।', gh_error_link: 'বরং GitHub-এ আমার রিপোজিটরি দেখুন', gh_empty: 'দেখানোর মতো কোনো পাবলিক রিপোজিটরি নেই।',
+        status_completed: 'সম্পন্ন',
+        pc_web: 'ওয়েব', pc_js: 'JavaScript', pc_tool: 'টুল', pc_design: 'ডিজাইন', pc_c: 'C ভাষা', pc_hw: 'হার্ডওয়্যার',
+        fp1_t: 'রেসপনসিভ পোর্টফোলিও', fp1_d: 'Bootstrap ও pure JavaScript দিয়ে তৈরি সম্পূর্ণ রেসপনসিভ ব্যক্তিগত পোর্টফোলিও — লেখা, প্রজেক্ট ও পরিসংখ্যান বিভাগসহ।',
+        fp2_t: 'TTAS Animation', fp2_d: 'Text Typing Animation Screen — সহজ ইনস্টলেশন সুবিধাসহ একটি হালকা JavaScript লাইব্রেরি (v1.3.1)।',
+        fp3_t: 'QR কোড জেনারেটর', fp3_d: 'এক্সটার্নাল API (QRserver) ইন্টিগ্রেশনে তৈরি QR কোড জেনারেটর টুল।',
+        fp4_t: 'লগইন ও রেজিস্টার', fp4_d: 'পাঁচটি পরিবর্তনযোগ্য থিম কালারসহ লগইন ও রেজিস্ট্রেশন পেজ ডিজাইন।',
+        fp5_t: 'মাল্টিফাংশনাল ক্যালকুলেটর', fp5_d: 'সাতটি অ্যাডভান্সড গাণিতিক ফাংশনসহ C ভাষায় তৈরি ক্যালকুলেটর টুল।',
+        fp6_t: 'আল্ট্রাসনিক রাডার', fp6_d: 'Arduino ও C++ দিয়ে তৈরি হার্ডওয়্যার-সফটওয়্যার হাইব্রিড রাডার।',
+        journey_kicker: 'যাত্রা', journey_heading: 'এ পর্যন্ত মাইলফলক', journey_sub: 'আমার পোর্টফোলিও ও GitHub প্রোফাইল থেকে নেওয়া।',
+        since_badge: 'শুরু',
+        j1_t: 'GitHub-এ যাত্রা শুরু', j1_d: 'উন্মুক্তভাবে কোড প্রকাশ শুরু — Arduino স্কেচ, C প্রোগ্রাম ও প্রাথমিক ওয়েব এক্সপেরিমেন্ট।', j1_date: 'মার্চ ২০২৪',
+        j2_t: 'প্রোগ্রামিংয়ের ভিত্তি (C ও Arduino)', j2_d: 'BCC রংপুর আয়োজিত আঞ্চলিক প্রোগ্রামিং প্রতিযোগিতায় ২য় এবং বাংলাদেশ মাদ্রাসা শিক্ষা বোর্ড আয়োজিত জাতীয় উদ্ভাবনী মেলায় ৮ম স্থান।', j2_date: '২০২৪',
+        j3_t: 'দাখিল (এসএসসি) উত্তীর্ণ', j3_d: 'রংপুরের ধাপ সাতগাড়া বি. এম. মডেল কামিল মাদ্রাসা থেকে দাখিল সম্পন্ন।', j3_date: '২০২৫',
+        j4_t: 'ওয়েব ডেভেলপমেন্টে প্রবেশ', j4_d: 'HTML, CSS ও JavaScript দিয়ে QR কোড জেনারেটর, লগইন ও রেজিস্টার ডিজাইন এবং TTAS Animation লাইব্রেরি তৈরি।', j4_date: 'জুলাই – সেপ্টেম্বর ২০২৫',
+        j5_t: 'ব্যক্তিগত পোর্টফোলিও প্রকাশ', j5_d: 'Bootstrap ও pure JS দিয়ে munib.rf.gd-তে আমার রেসপনসিভ পোর্টফোলিও ডিজাইন ও প্রকাশ।', j5_date: 'অক্টোবর ২০২৫',
+        j6_t: 'আলিম (এইচএসসি) ২০২৭ ব্যাচ', j6_d: 'পড়াশোনা চালিয়ে যাওয়ার পাশাপাশি ফুল-স্ট্যাক ওয়েব ডেভেলপমেন্টের জন্য PHP, MySQL ও Laravel শিখছি।', j6_date: 'বর্তমান',
+        contact_kicker: 'যোগাযোগ', contact_heading: 'চলুন একসাথে কিছু তৈরি করি', contact_sub: 'কোনো প্রজেক্ট, ইন্টার্নশিপ বা সহযোগিতার ভাবনা আছে? একটি বার্তা পাঠান।',
+        f_name: 'নাম', f_email: 'ইমেইল', f_msg: 'বার্তা', ph_name: 'আপনার নাম', ph_email: 'you@example.com', ph_msg: 'আপনার আইডিয়া সম্পর্কে বলুন…', send: 'বার্তা পাঠান',
+        v_name: 'অনুগ্রহ করে আপনার নাম লিখুন।', v_email: 'অনুগ্রহ করে একটি সঠিক ইমেইল ঠিকানা দিন।', v_msg: 'বার্তাটি কমপক্ষে ১০ অক্ষরের হতে হবে।',
+        toast_ok: 'আপনার ইমেইল অ্যাপ খুলছে — যোগাযোগের জন্য ধন্যবাদ!', toast_err: 'অনুগ্রহ করে চিহ্নিত ঘরগুলো ঠিক করুন।',
+        replies: 'সাধারণত এক দিনের মধ্যে উত্তর দিই।', socials_h: 'অনলাইনে আমাকে খুঁজুন',
+        s_email: 'ইমেইল', s_site: 'ওয়েবসাইট', s_github: 'GitHub', s_fb: 'Facebook', s_fb2: 'Facebook 2', s_li: 'LinkedIn', s_ig: 'Instagram', s_x: 'X (Twitter)',
+        subj: 'হ্যালো মুনিব — {name} এর পক্ষ থেকে',
+        foot_bio: 'রংপুর, বাংলাদেশের শিক্ষার্থী ও উদীয়মান ওয়েব ডেভেলপার — রেসপনসিভ ওয়েব অভিজ্ঞতা তৈরি করি এবং বিজ্ঞান ও প্রযুক্তি নিয়ে লিখি।',
+        foot_links: 'দ্রুত লিংক', foot_built: 'যা দিয়ে তৈরি', zero_build: 'কোনো বিল্ড স্টেপ নেই',
+        crafted: 'Tailwind CSS ও Alpine.js দিয়ে তৈরি', rights: 'সর্বস্বত্ব সংরক্ষিত।', back_top: 'উপরে যান'
+      },
+
+      ar: {
+        doc_title: 'محمد أسد الله المنيب — طالب ومطوّر ويب طموح',
+        name: 'محمد أسد الله المنيب',
+        nav_home: 'الرئيسية', nav_about: 'نبذة عني', nav_skills: 'المهارات', nav_projects: 'المشاريع', nav_journey: 'المسيرة', nav_contact: 'تواصل',
+        theme_toggle: 'تبديل السمة', lang_label: 'اللغة', menu: 'القائمة',
+        available: 'متاح للفرص',
+        greeting: 'مرحباً، أنا',
+        title: 'طالب ومطوّر ويب طموح',
+        tagline: 'أبني مواقع ويب متجاوبة وأدوات ويب صغيرة باستخدام HTML وCSS وJavaScript وPHP وLaravel — وأكتب عن العلوم والتقنية في الطريق.',
+        cta_projects: 'عرض المشاريع', cta_contact: 'تواصل معي', cta_github: 'GitHub',
+        stat_repos: 'مستودعات عامة', stat_followers: 'متابعون', stat_since: 'على GitHub منذ',
+        scroll: 'مرّر للأسفل',
+        about_kicker: 'نبذة عني', about_heading: 'طالب يعشق البناء',
+        about_p1: 'أنا محمد أسد الله المنيب من رنغبور، بنغلاديش — طالب لديه اهتمام عميق بالتقنية والإبداع. نشأت فضولياً حول كيفية عمل الأشياء، وهو ما قادني لاستكشاف البرمجة والروبوتات والمشاريع اليدوية إلى جانب دراستي.',
+        about_p2: 'أدرس حالياً في دفعة عالم‑2027 (الثانوية‑27) بمدرسة داب ساتغارا ب. م. النموذجية الكاملة في رنغبور، حيث اجتزت أيضاً امتحان الداخل (SSC) عام 2025.',
+        about_p3: 'أتعلّم الآن وأمارس تصميم وتطوير الويب — HTML وCSS وJavaScript وPHP وMySQL وLaravel — وأشارك أعمالي علناً على GitHub. الجمع بين الدراسة الأكاديمية والتعلّم الذاتي هو ما يصنع النمو الحقيقي بالنسبة لي.',
+        about_p4: 'خارج البرمجة، أكتب مقالات قصيرة عن العلوم والتقنية وأستمتع بالمشاريع العملية التي تمزج الإبداع بحل المشكلات. التعلّم لا يتوقف — هدفي أن أستمر في التحسّن، وأبني مشاريع ذات معنى، وألهم الآخرين بالابتكار.',
+        card_focus: 'التركيز الأساسي', card_focus_v: 'تطوير واجهات الويب وتصميم UI/UX',
+        card_location: 'الموقع', card_location_v: 'رنغبور، بنغلاديش · متاح للعمل عن بُعد',
+        card_open: 'منفتح على', card_open_v: 'العمل الحر والتدريب والتعاون',
+        card_edu: 'التعليم', card_edu_v: 'عالم (ثانوية) 2027 · داخل (SSC) 2025',
+        honors_kicker: 'التكريم',
+        honor1: 'المركز الثاني — مسابقة البرمجة الإقليمية 2024 (BCC رنغبور)',
+        honor2: 'المركز الثامن — معرض الابتكار الوطني 2024 (مجلس تعليم المدارس الدينية في بنغلاديش)',
+        skills_kicker: 'التقنيات', skills_heading: 'المهارات والأدوات التي أعمل بها',
+        skills_sub: 'مؤكَّدة من ملفي الشخصي وGitHub — بصدق ودون مبالغة.',
+        cat_lang: 'لغات البرمجة', cat_front: 'الواجهة الأمامية والأدوات', cat_back: 'الخلفية والبيانات', cat_design: 'التصميم وتجربة المستخدم', cat_hw: 'العتاد والروبوتات', cat_other: 'الكتابة وحل المشكلات',
+        learning: 'أتعلّم',
+        gh_langs: 'اللغات المكتشفة من GitHub', gh_langs_sub: 'محسوبة مباشرةً من مستودعاتي العامة.', gh_langs_empty: 'لا توجد بيانات لغات بعد.',
+        proj_kicker: 'الأعمال', proj_heading: 'مشاريع مميزة', proj_sub: 'أشياء صمّمتها وبنيتها وأطلقتها.',
+        proj_featured: 'مميز', proj_gh: 'مباشر من GitHub', proj_gh_sub: 'مجلوبة من أحدث مستودعاتي العامة.',
+        live: 'معاينة', code: 'الكود', no_desc: 'لم تتم إضافة وصف بعد.', updated: 'آخر تحديث', view_all: 'عرض الكل على GitHub',
+        loading: 'جارٍ تحميل المستودعات…', gh_error: 'تعذّر الوصول إلى GitHub حالياً.', gh_error_link: 'تصفّح مستودعاتي على GitHub بدلاً من ذلك', gh_empty: 'لا توجد مستودعات عامة لعرضها بعد.',
+        status_completed: 'مكتمل',
+        pc_web: 'ويب', pc_js: 'JavaScript', pc_tool: 'أداة', pc_design: 'تصميم', pc_c: 'لغة C', pc_hw: 'عتاد',
+        fp1_t: 'موقع شخصي متجاوب', fp1_d: 'موقع شخصي متجاوب بالكامل مبني بـ Bootstrap وJavaScript الخام، مع أقسام للكتابات والمشاريع والإحصاءات.',
+        fp2_t: 'TTAS Animation', fp2_d: 'شاشة تحريك الكتابة النصية — مكتبة JavaScript خفيفة مع طريقة تثبيت بسيطة (v1.3.1).',
+        fp3_t: 'مولّد رموز QR', fp3_d: 'أداة لتوليد رموز QR مبنية على تكامل مع واجهة برمجية خارجية (QRserver).',
+        fp4_t: 'تسجيل الدخول والتسجيل', fp4_d: 'تصميم صفحة تسجيل دخول وإنشاء حساب مع خمسة ألوان سمات قابلة للتبديل.',
+        fp5_t: 'آلة حاسبة متعددة الوظائف', fp5_d: 'أداة حاسبة بلغة C مع سبع دوال رياضية متقدمة.',
+        fp6_t: 'رادار بالموجات فوق الصوتية', fp6_d: 'رادار هجين بين العتاد والبرمجيات مبني بـ Arduino وC++.',
+        journey_kicker: 'المسيرة', journey_heading: 'المحطات حتى الآن', journey_sub: 'مستخلصة من ملفي الشخصي وحسابي على GitHub.',
+        since_badge: 'منذ',
+        j1_t: 'الانضمام إلى GitHub', j1_d: 'بدأت نشر الكود علناً — مخططات Arduino وبرامج C وتجارب ويب مبكرة.', j1_date: 'مارس 2024',
+        j2_t: 'أساسيات البرمجة (C وArduino)', j2_d: 'المركز الثاني في مسابقة البرمجة الإقليمية من BCC رنغبور، والمركز الثامن في معرض الابتكار الوطني من مجلس تعليم المدارس الدينية في بنغلاديش.', j2_date: '2024',
+        j3_t: 'اجتياز الداخل (SSC)', j3_d: 'أكملت مرحلة الداخل من مدرسة داب ساتغارا ب. م. النموذجية الكاملة، رنغبور.', j3_date: '2025',
+        j4_t: 'الدخول إلى تطوير الويب', j4_d: 'بنيت مولّد رموز QR وتصميم تسجيل الدخول والتسجيل ومكتبة TTAS Animation باستخدام HTML وCSS وJavaScript.', j4_date: 'يوليو – سبتمبر 2025',
+        j5_t: 'إطلاق الموقع الشخصي', j5_d: 'صمّمت وأطلقت موقعي المتجاوب على munib.rf.gd باستخدام Bootstrap وJS الخام.', j5_date: 'أكتوبر 2025',
+        j6_t: 'دفعة عالم (ثانوية) 2027', j6_d: 'أواصل دراستي مع تعلّم PHP وMySQL وLaravel للتقدّم نحو تطوير الويب الشامل.', j6_date: 'حالياً',
+        contact_kicker: 'تواصل', contact_heading: 'لنبنِ شيئاً معاً', contact_sub: 'لديك مشروع أو تدريب أو فكرة للتعاون؟ أرسل رسالة.',
+        f_name: 'الاسم', f_email: 'البريد الإلكتروني', f_msg: 'الرسالة', ph_name: 'اسمك', ph_email: 'you@example.com', ph_msg: 'أخبرني عن فكرتك…', send: 'إرسال الرسالة',
+        v_name: 'يرجى إدخال اسمك.', v_email: 'يرجى إدخال بريد إلكتروني صحيح.', v_msg: 'يجب أن تتكوّن الرسالة من 10 أحرف على الأقل.',
+        toast_ok: 'جارٍ فتح تطبيق البريد — شكراً لتواصلك!', toast_err: 'يرجى تصحيح الحقول المحددة.',
+        replies: 'أردّ عادةً خلال يوم واحد.', socials_h: 'تجدني على الإنترنت',
+        s_email: 'البريد', s_site: 'الموقع', s_github: 'GitHub', s_fb: 'Facebook', s_fb2: 'Facebook 2', s_li: 'LinkedIn', s_ig: 'Instagram', s_x: 'X (Twitter)',
+        subj: 'مرحباً منيب — من {name}',
+        foot_bio: 'طالب ومطوّر ويب طموح من رنغبور، بنغلاديش — أبني تجارب ويب متجاوبة وأكتب عن العلوم والتقنية.',
+        foot_links: 'روابط سريعة', foot_built: 'مبني باستخدام', zero_build: 'بدون خطوة بناء',
+        crafted: 'صُنع بـ Tailwind CSS وAlpine.js', rights: 'جميع الحقوق محفوظة.', back_top: 'العودة للأعلى'
+      }
+    };
+
+    /* =========================================================
+       Alpine app
+       ========================================================= */
+    let revealObserver = null;
+    let toastTimer = null;
+
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('app', () => ({
+        theme: 'dark',
+        lang: 'en',
+        menuOpen: false,
+        langOpen: false,
+        scrolled: false,
+        showTop: false,
+        active: 'home',
+        year: new Date().getFullYear(),
+        cfg: CONFIG,
+        nav: NAV,
+        skillCats: SKILLS,
+        featured: FEATURED,
+        timeline: TIMELINE,
+        socials: SOCIALS,
+        languages: [
+          { code: 'en', label: 'English' },
+          { code: 'bn', label: 'বাংলা' },
+          { code: 'ar', label: 'العربية' }
+        ],
+        gh: { loading: true, error: false, user: null, repos: [], langs: [] },
+        form: { name: '', email: '', message: '' },
+        errors: {},
+        toast: { show: false, msg: '', ok: true },
+
+        init() {
+          const h = document.documentElement;
+          this.theme = h.classList.contains('dark') ? 'dark' : 'light';
+          this.lang = h.getAttribute('data-lang') || 'en';
+          this.applyLang();
+          this.setupScroll();
+          this.setupObservers();
+          this.loadGithub();
+        },
+
+        /* ----- i18n helpers ----- */
+        t(k) {
+          const pack = I18N[this.lang] || I18N.en;
+          return (pack[k] !== undefined ? pack[k] : (I18N.en[k] !== undefined ? I18N.en[k] : k));
+        },
+        n(v, opts) {
+          try { return Number(v || 0).toLocaleString(LOCALES[this.lang] || 'en-US', opts || {}); } catch (e) { return String(v); }
+        },
+        d(iso) {
+          if (!iso) return '';
+          try { return new Date(iso).toLocaleDateString(LOCALES[this.lang] || 'en-US', { year: 'numeric', month: 'short', day: 'numeric' }); } catch (e) { return iso; }
+        },
+        get sinceYear() {
+          return this.gh.user && this.gh.user.created_at ? new Date(this.gh.user.created_at).getFullYear() : 2024;
+        },
+
+        /* ----- theme ----- */
+        toggleTheme() {
+          this.theme = this.theme === 'dark' ? 'light' : 'dark';
+          document.documentElement.classList.toggle('dark', this.theme === 'dark');
+          try { localStorage.setItem('theme', this.theme); } catch (e) {}
+          const meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', this.theme === 'dark' ? '#09090b' : '#fafafa');
+        },
+
+        /* ----- language ----- */
+        setLang(code) {
+          if (!I18N[code]) return;
+          this.lang = code;
+          try { localStorage.setItem('lang', code); } catch (e) {}
+          this.langOpen = false;
+          this.menuOpen = false;
+          this.applyLang();
+        },
+        applyLang() {
+          const h = document.documentElement;
+          h.setAttribute('lang', this.lang);
+          h.setAttribute('dir', this.lang === 'ar' ? 'rtl' : 'ltr');
+          h.setAttribute('data-lang', this.lang);
+          document.title = this.t('doc_title');
+          const meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', this.theme === 'dark' ? '#09090b' : '#fafafa');
+        },
+
+        /* ----- scroll (passive + rAF) ----- */
+        setupScroll() {
+          let ticking = false;
+          const onScroll = () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+              const y = window.scrollY || window.pageYOffset;
+              this.scrolled = y > 20;
+              this.showTop = y > 600;
+              ticking = false;
+            });
+          };
+          window.addEventListener('scroll', onScroll, { passive: true });
+          onScroll();
+        },
+
+        /* ----- IntersectionObservers ----- */
+        setupObservers() {
+          if (!('IntersectionObserver' in window)) {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+            return;
+          }
+          revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+              if (e.isIntersecting) { e.target.classList.add('in'); revealObserver.unobserve(e.target); }
+            });
+          }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+          this.observeReveals();
+
+          const secObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) this.active = e.target.id; });
+          }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+          document.querySelectorAll('main section[id]').forEach(s => secObs.observe(s));
+        },
+        observeReveals() {
+          if (!revealObserver) { document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in')); return; }
+          document.querySelectorAll('.reveal:not(.in):not([data-obs])').forEach(el => {
+            el.setAttribute('data-obs', '1');
+            revealObserver.observe(el);
+          });
+        },
+
+        /* ----- GitHub integration ----- */
+        async loadGithub() {
+          // 1) cache
+          try {
+            const raw = localStorage.getItem(CACHE_KEY);
+            if (raw) {
+              const c = JSON.parse(raw);
+              if (c && c.t && (Date.now() - c.t) < CACHE_TTL && c.user && Array.isArray(c.repos)) {
+                this.applyGithub(c.user, c.repos);
+                return;
+              }
+            }
+          } catch (e) {}
+          // 2) network
+          try {
+            const base = 'https://api.github.com/users/' + CONFIG.githubUser;
+            const headers = { 'Accept': 'application/vnd.github+json' };
+            const [u, r] = await Promise.all([
+              fetch(base, { headers }),
+              fetch(base + '/repos?sort=pushed&per_page=100&type=owner', { headers })
+            ]);
+            if (!u.ok || !r.ok) throw new Error('GitHub API ' + u.status + '/' + r.status);
+            const user = await u.json();
+            const reposRaw = await r.json();
+            const repos = (Array.isArray(reposRaw) ? reposRaw : []).map(x => ({
+              id: x.id, name: x.name, full_name: x.full_name, html_url: x.html_url, description: x.description,
+              fork: x.fork, archived: x.archived, language: x.language, topics: x.topics || [],
+              stargazers_count: x.stargazers_count, pushed_at: x.pushed_at, homepage: x.homepage, has_pages: x.has_pages
+            }));
+            const slimUser = { login: user.login, name: user.name, bio: user.bio, location: user.location, followers: user.followers, public_repos: user.public_repos, created_at: user.created_at, avatar_url: user.avatar_url };
+            try { localStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), user: slimUser, repos })); } catch (e) {}
+            this.applyGithub(slimUser, repos);
+          } catch (err) {
+            console.warn('GitHub fetch failed:', err);
+            this.gh.error = true;
+            this.gh.loading = false;
+          }
+        },
+        applyGithub(user, repos) {
+          this.gh.user = user;
+          const me = CONFIG.githubUser.toLowerCase();
+          const base = repos.filter(r => !r.fork && !r.archived && r.name.toLowerCase() !== me);
+
+          // Exclusion filter (mobile / game / etc.)
+          const isExcluded = (r) => {
+            const lang = (r.language || '').toLowerCase();
+            if (CONFIG.excludeLangs.includes(lang)) return true;
+            const text = (r.name + ' ' + (r.description || '') + ' ' + (r.topics || []).join(' ')).toLowerCase();
+            return CONFIG.excludeWords.some(w => text.includes(w));
+          };
+          let list = base.filter(r => !isExcluded(r));
+          if (list.length === 0) list = base.slice();
+
+          // Languages strip (from the filtered pool)
+          const counts = {};
+          list.forEach(r => { if (r.language) counts[r.language] = (counts[r.language] || 0) + 1; });
+          this.gh.langs = Object.keys(counts)
+            .map(name => ({ name, count: counts[name], color: this.langColor(name) }))
+            .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+
+          // De-duplicate against featured projects
+          const featuredRepos = FEATURED.filter(f => f.repo).map(f => f.repo.toLowerCase());
+          list = list.filter(r => !featuredRepos.includes(r.name.toLowerCase()));
+
+          // Sort: stars desc, then last push desc
+          list.sort((a, b) => (b.stargazers_count - a.stargazers_count) || (new Date(b.pushed_at) - new Date(a.pushed_at)));
+          this.gh.repos = list.slice(0, 6);
+          this.gh.error = false;
+          this.gh.loading = false;
+          this.$nextTick(() => this.observeReveals());
+        },
+        langColor(name) {
+          return LANG_COLORS[name] || '#8b8b8b';
+        },
+        pretty(name) {
+          return String(name || '').replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim()
+            .split(' ').map(w => w.length <= 3 && w === w.toUpperCase() ? w : w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        },
+        liveUrl(r) {
+          if (r.homepage && /^https?:\/\//i.test(r.homepage)) return r.homepage;
+          if (r.has_pages) return 'https://' + CONFIG.githubUser.toLowerCase() + '.github.io/' + r.name + '/';
+          return null;
+        },
+
+        /* ----- contact form ----- */
+        submit() {
+          const f = this.form;
+          const errs = {};
+          if (!f.name.trim()) errs.name = this.t('v_name');
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.trim())) errs.email = this.t('v_email');
+          if (f.message.trim().length < 10) errs.message = this.t('v_msg');
+          this.errors = errs;
+          if (Object.keys(errs).length) { this.notify(this.t('toast_err'), false); return; }
+
+          const subject = this.t('subj').replace('{name}', f.name.trim());
+          const body = f.message.trim() + '\n\n— ' + f.name.trim() + '\n' + f.email.trim();
+          const href = 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+          window.location.href = href;
+          this.notify(this.t('toast_ok'), true);
+          this.form = { name: '', email: '', message: '' };
+        },
+        notify(msg, ok) {
+          this.toast = { show: true, msg, ok: ok !== false };
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => { this.toast.show = false; }, 3800);
+        }
+      }));
+    });
+  </script>
+</body>
+</html>
