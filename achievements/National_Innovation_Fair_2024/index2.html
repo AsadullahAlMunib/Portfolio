@@ -443,26 +443,15 @@
               (YouTube links will auto-extract thumbnail poster if not specified!)
         ============================================================= */
         const GALLERY_ITEMS_RAW = [
-            /* --- Example Video 1: YouTube Embed (Recommended for InfinityFree) --- */
+            /* --- National Innovation Fair 2024 Video Highlight --- */
             {
                 type: 'video',
-                src: 'https://www.youtube.com/embed/BlJpfvxI4zM?si=HUuvmCMla1uAy3UQ', // <-- Replace with your YouTube video URL
-                poster: './image/IMG-20240509-1A0001.jpg',           // Optional custom poster image
+                src: 'https://www.youtube.com/embed/BlJpfvxI4zM?si=HUuvmCMla1uAy3UQ',
+                poster: 'https://img.youtube.com/vi/BlJpfvxI4zM/hqdefault.jpg',
                 title: 'National Innovation Fair 2024 Highlights',
-                duration: '03:15',
+                duration: 'Video',
                 date: '2024-05-09'
             },
-            /* --- Example Video 2: Local or Direct MP4/WebM --- */
-            /*
-            {
-                type: 'video',
-                src: './video/fair_highlights.mp4',
-                poster: './image/IMG-20240509-1A0002.jpg',
-                title: 'Robotics Project Demonstration Clip',
-                duration: '01:20',
-                date: '2024-05-09'
-            },
-            */
             /* --- Photo Collection --- */
             './image/IMG-20240509-1A0001.jpg',
             './image/IMG-20240509-1A0002.jpg',
@@ -950,7 +939,7 @@
                 if (it.ytId) {
                     vIframeWrap.style.display = 'block';
                     vIframe.src = 'https://www.youtube-nocookie.com/embed/' + it.ytId + '?autoplay=1&rel=0';
-                    vDownload.href = it.src;
+                    vDownload.href = 'https://www.youtube.com/watch?v=' + it.ytId;
                     vDownload.setAttribute('target', '_blank');
                     vDownload.removeAttribute('download');
                     vDownload.title = 'Watch on YouTube';
@@ -1257,7 +1246,7 @@
         vShare.addEventListener('click', async function (e) {
             e.stopPropagation();
             const it = flatItems[vIndex];
-            const url = new URL(it.src, location.href).href;
+            const url = it.ytId ? ('https://www.youtube.com/watch?v=' + it.ytId) : new URL(it.src, location.href).href;
             try {
                 if (navigator.share) {
                     await navigator.share({ title: it.title || 'National Innovation Fair 2024', url: url });
